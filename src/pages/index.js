@@ -35,7 +35,7 @@ function Introduction() {
     <div id="introduction">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/01073865290819.5d61d475f0072.jpg" id="banner-img"></img>
       <div className="main-desc">
-        <h2 className="pixel-font" style={{'font-size': '40px', 'line-height': '1.6'}}>We are a coding club @ <br/><span className="purple">Decatur High School</span>.</h2>
+        <h2 className="pixel-font" style={{'font-size': '40px', 'line-height': '1.6'}}>We are a coding club @ <br/><span className="purple">Decatur High School</span></h2>
         <div id="inner-desc">
           <p>We offer hands-on coding experience for all ranges of <br/>skill with our interactive lessons and activities.</p>
           <p> From beginner to expert, our club will help you<br/>develop your skills in a no-pressure environment.</p>
