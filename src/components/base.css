@@ -44,16 +44,16 @@
 }
 
 nav {
-    top: 0;
-    position: sticky;
-    font-weight: 600;
-    background-color: white;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    overflow: auto;
-    font-family: 'Open Sans', sans-serif;
+  top: 0;
+  position: sticky;
+  font-weight: 600;
+  background-color: white;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  overflow: auto;
+  font-family: 'Open Sans', sans-serif;
 }
 
 a:hover, a:visited, a {
@@ -71,15 +71,19 @@ a:hover, a:visited, a {
 }
 
 .nav-element, .nav-element img, .nav-element a {
-    margin-left: 5px;
-    margin-right: 5px;
-    color: #1b003d;
-    font-size: 20px;
-    display: inline-block;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    line-height: 1.5;
-    vertical-align: middle;
+  transition: 0.2s;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #1b003d;
+  font-size: 20px;
+  display: inline-block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+.nav-element a:hover {
+  font-size: 21px;
 }
 
 
@@ -150,7 +154,9 @@ p {
 }
 
 .main-desc h2 {
-  font-size: 40px;
+  line-height: 1.6;
+  font-size: 35px;
+  margin-bottom: 60px;
   
 }
 
@@ -159,6 +165,7 @@ p {
   width: 100%;
   object-fit: cover;
 }
+
 
 #inner-desc {
   margin-bottom: 5vw;
