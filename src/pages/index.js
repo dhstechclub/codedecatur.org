@@ -49,10 +49,10 @@ function Introduction() {
 
 const Socials = () => {
   return <div className="flex-container center socials">
-    <a target="_blank" rel="noreferrer" href=""><img src={InstagramLogo}/></a>
-    <a target="_blank" rel="noreferrer" href=""><img src={FacebookLogo}/></a>
+    <a target="_blank" rel="noreferrer" href="https://www.instagram.com/codecatur/"><img src={InstagramLogo}/></a>
+    <a target="_blank" rel="noreferrer" href="https://www.facebook.com/code.decatur.5"><img src={FacebookLogo}/></a>
     <a target="_blank" rel="noreferrer" href="https://discord.gg/AXpAbZ"><img src={DiscordLogo}/></a>
-    <a target="_blank" rel="noreferrer" href=""><img src={GithubLogo}/></a>
+    <a target="_blank" rel="noreferrer" href="https://github.com/"><img src={GithubLogo}/></a>
   </div>
 }
 
