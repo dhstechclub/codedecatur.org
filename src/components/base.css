@@ -209,3 +209,31 @@ p {
 .ide {
   height: 60vh;
 }
+
+button {
+  background-color: #5500c3; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
+
+
+.projects-frame {
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.projects-frame td, .projects-frame th {
+  
+  width: 500px;
+}
+
+.projects-frame table {
+  margin-left: auto;
+  margin-right: auto;
+}

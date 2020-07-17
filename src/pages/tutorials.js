@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 function OnlineIDE(props){
-    return <iframe src={props.url} width="100%" class="ide" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    return <iframe src={props.url} width="100%" className="ide" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
 }
 
 function Tutorial(props){
@@ -69,15 +69,15 @@ const TutorialsPage = () => {
   return (
     <Layout>
       <SEO title="Code Online" />
-      <div class="tutorials-frame flex-container">
-        <div class="tutorial-row tutorial-navigation">
+      <div className="tutorials-frame flex-container">
+        <div className="tutorial-row tutorial-navigation">
           <TutorialSelection/>
             <div>
               <NextTutorialButton/>
               <PreviousTutorialButton/>
           </div>    
         </div>
-        <div class="tutorial-row tutorials"> 
+        <div className="tutorial-row tutorials"> 
           <Tutorial url={tutorials[currentTutorial].url} title={tutorials[currentTutorial].title} desc={tutorials[currentTutorial].desc}/>
         </div>
       </div>

@@ -23,10 +23,13 @@ function Nav() {
           <Link to="/"><img src={Logo} id="main-image"></img></Link>
         </div>
         <div className="nav-element">
-          <Link to="/schedule">Schedule</Link>
+          <Link to="/tutorials">Tutorials</Link>
         </div>
         <div className="nav-element">
-          <Link to="/tutorials">Tutorials</Link>
+          <Link to="/projects">Projects</Link>
+        </div>
+        <div className="nav-element">
+          <Link to="/schedule">Schedule</Link>
         </div>
       </div>
     </nav>
