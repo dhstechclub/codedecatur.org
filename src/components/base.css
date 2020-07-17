@@ -179,3 +179,33 @@ p {
 .pixel-font {
     font-family: 'Press Start 2P', cursive;
 }
+
+.tutorials-frame {
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  align-items: center;
+  font-size: 0.8vw;
+}
+
+
+.tutorials {
+  width: 88%;
+}
+
+.tutorial-navigation {
+  width: 10%;
+  margin-right: 2%;
+}
+
+.tutorial-navigation button {
+  width: 100%;
+}
+
+.tutorial-row {
+  
+}
+
+.ide {
+  height: 60vh;
+}

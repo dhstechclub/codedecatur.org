@@ -26,7 +26,7 @@ function Nav() {
           <Link to="/schedule">Schedule</Link>
         </div>
         <div className="nav-element">
-          <Link to="/code">Code</Link>
+          <Link to="/tutorials">Tutorials</Link>
         </div>
       </div>
     </nav>
