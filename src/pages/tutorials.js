@@ -27,6 +27,8 @@ const tutorials = [
   {'url': 'https://trinket.io/embed/python3/faa497cf91', 'title': "Functions: Demo", "desc": "I'm a new addition to your story :)"},
   {'url': 'https://trinket.io/embed/python3/c1ffcc43c9', 'title': "User Input", "desc": "Sometimes it's better to not give users a choice"},
   {'url': 'https://trinket.io/embed/python3/b5877d9501', 'title': "Scope", "desc": "Anything more is out of the scope of this course."},
+  {'url': 'https://trinket.io/embed/python3/27e3391f65', 'title': "Packages", "desc": "pip install pip"},
+
 ]
 
 
