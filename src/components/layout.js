@@ -23,16 +23,19 @@ function Nav() {
           <Link to="/"><img src={Logo} id="main-image" alt="Code Decatur"></img></Link>
         </div>
         <div className="nav-element">
-          <Link to="/tutorials">Tutorials</Link>
+          <Link to="/tutorials/">Tutorials</Link>
         </div>
         <div className="nav-element">
-          <Link to="/courses">Courses</Link>
+          <Link to="/courses/">Courses</Link>
         </div>
         <div className="nav-element">
-          <Link to="/projects">Projects</Link>
+          <Link to="/projects/">Projects</Link>
         </div>
         <div className="nav-element">
-          <Link to="/schedule">Schedule</Link>
+          <Link to="/schedule/">Schedule</Link>
+        </div>
+        <div className="nav-element">
+          <Link to="/Karten/">Tools</Link>
         </div>
       </div>
     </nav>
