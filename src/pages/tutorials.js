@@ -71,7 +71,7 @@ const TutorialsPage = () => {
   return (
     <Layout>
       <SEO title="Code Online" />
-      <div className="tutorials-frame flex-container">
+      <div className="tutorials-frame flex-container nav-spacing">
         <div className="tutorial-row tutorial-navigation">
           <TutorialSelection/>
             <div>

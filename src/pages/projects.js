@@ -33,7 +33,7 @@ for(let key in authorSections){
 const ProjectsPage = () => (
   <Layout>
     <SEO title="Projects" />
-    <div className="projects-frame">
+    <div className="projects-frame nav-spacing">
         <h1>Projects</h1>
         <h3>These projects have been created by Code Decatur members.</h3>
         <table>

@@ -6,6 +6,7 @@ import FacebookLogo from "../images/facebook.png"
 import InstagramLogo from "../images/instagram.png"
 import GithubLogo from "../images/github.png"
 import Potion from "../images/healthpotion.gif"
+import "../components/global.css"
 
 
 
@@ -40,9 +41,8 @@ function Introduction() {
           <p>We offer hands-on coding experience for all ranges of <br/>skill with our interactive lessons and activities.</p>
           <p> From beginner to expert, our club will help you<br/>develop your skills in a no-pressure environment.</p>
         </div>
-        <br/>
+        <hr></hr>
       </div>
-      <hr></hr>
     </div>
   );
 }
