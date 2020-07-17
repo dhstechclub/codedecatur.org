@@ -35,7 +35,7 @@ function Nav() {
           <Link to="/schedule/">Schedule</Link>
         </div>
         <div className="nav-element">
-          <Link to="/Karten/">Tools</Link>
+          <Link to="/tools/">Tools</Link>
         </div>
       </div>
     </nav>

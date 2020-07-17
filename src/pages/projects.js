@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 const projects = [
     {"url": "https://codecatur.com/", "name": "Code Decatur", "author": "Hayden Carpenter", "redirect": false},
     {"url": "https://dev.dance", "name": "Portfolio Website", "author": "Hayden Carpenter"},
-    {"url": "https://github.com/xHayden/Karten", "name": "Karten (Flashcards)", "author": "Hayden Carpenter", "redirect": false},
+    {"url": "https://codecatur.com/Karten/", "name": "Karten (Flashcards)", "author": "Hayden Carpenter", "redirect": false},
     {"url": "http://cleverlynamedwebsite.pw/hexa", "name": "Hexa (Game)", "author": "Carter Semrad"},
     {"url": "http://cleverlynamedwebsite.pw/soccer/webSoccer/", "name": "Web Soccer (Game)", "author": "Carter Semrad"},
     {"url": "https://veryclevername3.github.io/DifferentialEquations/", "name": "Differential Equations Modeling", "author": "Carter Semrad"},
