@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `CoDecatur`,
-    description: `CoDecatur is the Coding Club at Decatur High School`,
+    title: `Code Decatur`,
+    description: `The Coding Club at Decatur High School`,
+    url: "https://codecatur.com",
     author: `Hayden Carpenter`,
   },
   plugins: [

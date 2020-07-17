@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 function OnlineIDE(props){
-    return <iframe src={props.url} width="100%" className="ide" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    return <iframe src={props.url} width="100%" className="ide" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen title="Trinket IDE"></iframe>
 }
 
 function Tutorial(props){

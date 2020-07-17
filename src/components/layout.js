@@ -7,9 +7,9 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+//import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
-import Header from "./header"
+//import Header from "./header"
 import "./layout.css"
 import "./base.css"
 import Logo from "../images/codecatur.png"
@@ -20,7 +20,7 @@ function Nav() {
     <nav>
       <div id="left-align-nav">
         <div className="nav-element">
-          <Link to="/"><img src={Logo} id="main-image"></img></Link>
+          <Link to="/"><img src={Logo} id="main-image" alt="Code Decatur"></img></Link>
         </div>
         <div className="nav-element">
           <Link to="/tutorials">Tutorials</Link>
@@ -38,7 +38,7 @@ function Nav() {
 
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+  /**const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `)*/
 
   return (
     <>
@@ -59,7 +59,7 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built by
+          <h1 className="footer-name">Code Decatur </h1> © {new Date().getFullYear()}, Built by
           {` `}
           <a href="https://github.com/xhayden" rel="noreferrer" target="_blank">Hayden Carpenter</a>
         </footer>

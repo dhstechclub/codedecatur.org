@@ -153,7 +153,7 @@ p {
   
 }
 
-.main-desc h2 {
+.main-desc h1 {
   line-height: 1.6;
   font-size: 35px;
   margin-bottom: 60px;
@@ -236,4 +236,16 @@ button {
 .projects-frame table {
   margin-left: auto;
   margin-right: auto;
+}
+
+.footer-name {
+  font-size: 18px;
+  font-weight: 400;
+  display: inline-block;
+}
+
+footer {
+  align-content: center;
+  vertical-align: middle;
+  display: inline-block;
 }
