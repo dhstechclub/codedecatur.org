@@ -32,10 +32,10 @@ function Nav() {
           <Link to="/projects/">Projects</Link>
         </div>
         <div className="nav-element">
-          <Link to="/schedule/">Schedule</Link>
+          <Link to="/tools/">Tools</Link>
         </div>
         <div className="nav-element">
-          <Link to="/tools/">Tools</Link>
+          <Link to="/schedule/">Schedule</Link>
         </div>
       </div>
     </nav>

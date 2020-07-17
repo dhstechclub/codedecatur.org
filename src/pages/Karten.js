@@ -117,7 +117,7 @@ function Karten() {
   }
   return (
     <Layout>
-      <SEO title="Install Python" />
+      <SEO title="Karten Flashcards" />
     <div className="nav-spacing">
       <LanguageChange changeFrom={setLanguageFrom} changeTo={setLanguageTo} from={languageFrom} to={languageTo} />
       <CardsList language={`${getLanguageName(languageFrom)} <-> ${getLanguageName(languageTo)}`} cards={cards} changeCard={changeCard}/>
