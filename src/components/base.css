@@ -239,6 +239,11 @@ button {
   text-align: center;
 }
 
+.margin { 
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 #introduction {
   height: 100%;
 }
@@ -265,4 +270,21 @@ footer {
   vertical-align: middle;
   display: inline-block;
   margin-block-end: 0;
+}
+
+.course-intro-frame {
+  margin-bottom: 50px;
+}
+
+#python-install-frame {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 40px;
+  margin-bottom: 250px;
+}
+
+#python-install-frame img {
+  float: left;
+  margin-right: 5%;
+  clear: right;
 }

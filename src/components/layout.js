@@ -26,6 +26,9 @@ function Nav() {
           <Link to="/tutorials">Tutorials</Link>
         </div>
         <div className="nav-element">
+          <Link to="/courses">Courses</Link>
+        </div>
+        <div className="nav-element">
           <Link to="/projects">Projects</Link>
         </div>
         <div className="nav-element">
