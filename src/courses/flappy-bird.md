@@ -6,6 +6,7 @@ author: "Carter Semrad"
 ---
 
 ![game](../images/flappy.png)
+[Play The Game](https://veryclevername3.github.io/hosting/flappyBirdClone/index.html)
 
 1.)
 Open up a new folder in Visual Studio Code. In it, create two files: index.html and main.js:
