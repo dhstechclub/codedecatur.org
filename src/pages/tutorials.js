@@ -20,7 +20,7 @@ const TutorialsPage = () => {
                             <td className="tutorial-list-table-element"><p>Want to learn Python with no coding experience?</p></td>
                         </tr>
                         <tr>
-                            <th className="tutorial-list-table-element"><h3><Link to="/tutorials/web-scraper">Web Scraping</Link></h3></th>
+                            <th className="tutorial-list-table-element"><h3><Link to="/tutorials/python/web-scraper">Web Scraping</Link></h3></th>
                             <td className="tutorial-list-table-element"><p>Ever wanted to scrape data off a web page and put it into your greedy little hands?<br/>Here you go!</p></td>
                         </tr>
                     </table>

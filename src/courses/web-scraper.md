@@ -1,5 +1,5 @@
 ---
-slug: "/tutorials/web-scraper"
+slug: "/tutorials/python/web-scraper"
 date: "2020-07-17"
 title: "Web Scraper in Python using Selenium"
 author: "Hayden Carpenter"
