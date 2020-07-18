@@ -315,6 +315,14 @@ footer {
   margin-bottom: 50px;
 }
 
+td.tutorial-list-table-element {
+  width: 100%;
+  padding-right: 40%;
+}
+th.tutorial-list-table-element {
+  width: 20%;
+}
+
 #python-install-frame {
   margin-left: 20%;
   margin-right: 20%;
@@ -327,3 +335,4 @@ footer {
   margin-right: 5%;
   clear: right;
 }
+
