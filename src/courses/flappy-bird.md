@@ -5,8 +5,6 @@ title: "Creating (Bad) Flappy Bird in HTML5/Javascript"
 author: "Carter Semrad"
 ---
 
-# Creating (Bad) Flappy Bird in HTML5/Javascript
-
 ![game](../images/flappy-bird/flappy.png)
 
 [Play the game](https://veryclevername3.github.io/hosting/flappyBirdClone/index.html)
