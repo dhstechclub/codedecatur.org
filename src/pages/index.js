@@ -51,7 +51,7 @@ const Socials = () => {
   return <div className="flex-container center socials">
     <a target="_blank" rel="noreferrer" href="https://www.instagram.com/codecatur/"><img src={InstagramLogo} alt="Instagram Logo"/></a>
     <a target="_blank" rel="noreferrer" href="https://www.facebook.com/code.decatur.5"><img src={FacebookLogo} alt="Facebook Logo"/></a>
-    <a target="_blank" rel="noreferrer" href="https://discord.gg/AXpAbZ"><img src={DiscordLogo} alt="Discord Logo"/></a>
+    <a target="_blank" rel="noreferrer" href="https://discord.gg/8HVZDaE"><img src={DiscordLogo} alt="Discord Logo"/></a>
     <a target="_blank" rel="noreferrer" href="https://github.com/"><img src={GithubLogo} alt="Github Logo"/></a>
   </div>
 }
