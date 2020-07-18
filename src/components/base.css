@@ -336,3 +336,7 @@ th.tutorial-list-table-element {
   clear: right;
 }
 
+.course-container {
+  margin-left: 16%;
+  margin-right: 16%;
+}

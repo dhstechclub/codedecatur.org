@@ -8,7 +8,7 @@ export default function Template({ data, }) {
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-        <div className="course-container margin nav-spacing">
+        <div className="course-container nav-spacing">
             <div className="course">
                 <h1>{frontmatter.title}</h1>
                 <table style={{"width": "30%"}}>
