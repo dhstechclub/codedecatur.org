@@ -242,6 +242,10 @@ button {
   margin-right: 10%;
 }
 
+.gatsby-resp-image-image {
+  z-index: -1;
+}
+
 #introduction {
   height: 100%;
 }

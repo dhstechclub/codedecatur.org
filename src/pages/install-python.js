@@ -14,7 +14,7 @@ const InstallPythonPage = () => {
       <SEO title="Install Python" />
         <div id="python-install-frame">
             <h1>Local installation</h1>
-            <img src={PythonImage1}></img>
+            <img src={PythonImage1} alt="Python install"></img>
             <p>
                 To install Python onto your local system, navigate to  <Link target="_blank" to="https://www.python.org/downloads/" rel="norefferer">https://www.python.org/downloads/</Link>.
             </p>
@@ -36,7 +36,7 @@ const InstallPythonPage = () => {
             <p>
                 <br/>
                 <h4>When you open VS Code, you'll see on the left side of the screen there is 4 boxes with one box slightly pushed away.</h4><br/>
-                <img src={PythonImage2}></img> Clicking that icon will bring you to the extensions page. This can also be accessed with <b>Ctrl+Shift+X</b>.<br/>
+                <img src={PythonImage2} alt="VS Code Extension Window"></img> Clicking that icon will bring you to the extensions page. This can also be accessed with <b>Ctrl+Shift+X</b>.<br/>
                 Search for python and install the extension. This will give you a Linter for python. The linter allows you to code much easier with formatting and shortcuts.<br/>
                 It will also point out errors in your code, but you won't need that feature because you're a perfect programmer.
             </p>
