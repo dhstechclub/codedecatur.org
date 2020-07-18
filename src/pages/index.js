@@ -24,7 +24,7 @@ function Media(){
   return (
     <div className="flex-container media-container">
       <MediaSubsection title="2019" info={<div><p>We were founded in 2019 under the name Cybersecurity Club. We participated in <a href="https://picoctf.com" rel="noreferrer" target="_blank">PicoCTF 2019</a>, a 'hacking' competition between high school students known as <a href="ctf">Capture the Flag</a>.</p></div>}/>
-      <MediaSubsection title="2020" info={<div><p>Our 2020 Year will start off with some coding challenges we will host here, at <span className="purple">codecatur.com</span>.</p></div>}/>
+      <MediaSubsection title="2020" info={<div><p>Our 2020 Year will start off with some coding challenges we will host here, at <span className="purple">codedecatur.org</span>.</p></div>}/>
     </div>
     
   );
@@ -36,7 +36,7 @@ function Introduction() {
     <div id="introduction">
       <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/01073865290819.5d61d475f0072.jpg" id="banner-img" alt="Pixelart Banner"></img>
       <div className="main-desc">
-        <h1 className="pixel-font">We are a coding club at<br/><span className="purple">Decatur High School</span></h1>
+        <h1 className="pixel-font">{'Code Decatur'}</h1>
         <div id="inner-desc">
           <p>We offer hands-on coding experience for all ranges of <br/>skill with our interactive lessons and activities.</p>
           <p> From beginner to expert, our club will help you<br/>develop your skills in a no-pressure environment.</p>
@@ -59,7 +59,7 @@ const Socials = () => {
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Homepage" name="Decatur High School Coding Club"></SEO>
+    <SEO title="Homepage" name="Code Decatur"></SEO>
     <div className="App">
       <Introduction/>
       <Media/>

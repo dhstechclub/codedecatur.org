@@ -165,7 +165,7 @@ a:hover {
 }
 
 .media-block h2 {
-  color: #5500c3;
+  color: #363636;
   font-size: 50px;
   font-family: 'EditUndo', serif;
 }
@@ -201,10 +201,12 @@ p {
 }
 
 .main-desc h1 {
+  color: rgb(34, 34, 34);
+  word-spacing: 20px;
   line-height: 1.1;
-  font-size: 60px;
+  font-size: 100px;
   margin-bottom: 60px;
-  font-family: 'Joystix', serif;
+  font-family: 'Karmatic', serif;
 }
 
 #banner-img {
@@ -215,6 +217,7 @@ p {
 
 
 #inner-desc {
+  margin-top: 50px;
   margin-bottom: 150px;
   
 }
@@ -388,13 +391,18 @@ th.tutorial-list-table-element {
   #banner-img {
     height: 30vw;
   }
+  .main-desc {
+    
+  }
   .main-desc h1 {
-    font-size: 20px;
+    font-size: 40px;
+    margin-bottom: 0px;
   }
   .main-desc p {
     font-size: 18px;
   }
   #inner-desc {
+    margin-top: 40px;
     margin-bottom: 0px;
     padding-bottom: 20px;
   }
