@@ -19,7 +19,7 @@ function Nav() {
   return (
     <nav>
       <div id="left-align-nav">
-        <div className="nav-element">
+        <div className="nav-element" id="nav-logo">
           <Link to="/"><img src={Logo} id="main-image" alt="Code Decatur"></img></Link>
         </div>
         <div className="nav-element">

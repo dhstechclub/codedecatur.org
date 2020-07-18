@@ -341,3 +341,59 @@ th.tutorial-list-table-element {
   margin-left: 16%;
   margin-right: 16%;
 }
+
+
+
+/** For Mobile */
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  #nav-logo {
+    display: none;
+  }
+  nav {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  .nav-element {
+    display: block;
+  }
+  #banner-img {
+    height: 30vw;
+  }
+
+  .main-desc h1 {
+    font-size: 20px;
+  }
+  .main-desc p {
+    font-size: 20px;
+  }
+
+  td.tutorial-list-table-element {
+    padding-right: 0; 
+  }
+
+  .language-section h1 {
+    font-size: 40px;
+  }
+
+  .tutorials-frame {
+    font-size: 20px;
+  }
+
+  .tutorials-frame.flex-container{
+    display: block;
+  }
+  .tutorial-navigation ol {
+    text-align: center;
+   
+  }
+  .tutorial-navigation {
+    margin: 0;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .tutorials {
+    width: 100%;
+  }
+}
