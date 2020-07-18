@@ -68,6 +68,7 @@ html, body {
 }
 
 nav {
+  z-index: 999;
   background-color: white;
   top: 0;
   position: sticky;

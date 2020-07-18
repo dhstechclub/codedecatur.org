@@ -35,7 +35,10 @@ const TutorialsPage = () => {
                         <tr>
                             <th className="tutorial-list-table-element"><h3><Link to="/javascript">Intro to Javascript</Link></h3></th>
                             <td className="tutorial-list-table-element"><p>Want to learn Javascript with some coding experience?</p></td>
-                            
+                        </tr>
+                        <tr>
+                            <th className="tutorial-list-table-element"><h3><Link to="/tutorials/javascript/flappy-bird">(Bad) Flappy Bird</Link></h3></th>
+                            <td className="tutorial-list-table-element"><p>Want to create a bad flappy bird clone with little to no actual help? This is the tutorial for you.</p></td>
                         </tr>
                     </table>
                 </div>
