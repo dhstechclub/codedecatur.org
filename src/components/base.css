@@ -278,7 +278,7 @@ button {
   margin-right: 10%;
 }
 
-.gatsby-resp-image-image {
+.gatsby-resp-image-image, .gatsby-resp-image-background-image, .gatsby-resp-image-link{
   z-index: -1;
 }
 

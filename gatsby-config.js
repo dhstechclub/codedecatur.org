@@ -52,6 +52,9 @@ module.exports = {
               maxWidth: 800,
             },
           },
+          {
+            resolve: `gatsby-remark-highlight-code`
+          },
         ],
       },
     },
