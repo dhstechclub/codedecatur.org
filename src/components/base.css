@@ -130,6 +130,24 @@ a:hover, a:visited, a {
   
 }
 
+.media-block a:link, .media-block a:visited, .media-block a:active, .media-block a:hover{
+  text-decoration: underline;
+}
+
+a:link, a:visited, a:active {
+  color: black;
+  
+}
+
+a:hover {
+  color: rgb(122, 122, 122)
+}
+
+.language-section h1{
+  font-size: 30px;
+  font-family: 'Press Start 2P', cursive;
+}
+
 .media-block h2 {
   color: #5500c3;
   font-size: 30px;
@@ -185,7 +203,7 @@ p {
 }
 
 .purple {
-  color: #5500c3;
+  color: #5500c3 !important;
 }
 
 .pixel-font {
@@ -274,7 +292,7 @@ footer {
   margin-block-end: 0;
 }
 
-.course-intro-frame {
+.tutorial-intro-frame {
   margin-bottom: 50px;
 }
 

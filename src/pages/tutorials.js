@@ -1,92 +1,48 @@
-import React, { useState } from "react"
+import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-function OnlineIDE(props){
-    return <iframe src={props.url} width="100%" className="ide" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen title="Trinket IDE"></iframe>
-}
-
-function Tutorial(props){
-  return (<div>
-    <h2>{props.title}</h2>
-  <p>{props.desc}</p>
-    <OnlineIDE url={props.url}/>
-  </div>);
-}
-
-const tutorials = [
-  {'url': 'https://trinket.io/embed/python3/88aeefac23', 'title': "Hello World!", "desc": "An introduction to Python"},
-  {'url': 'https://trinket.io/embed/python3/70a2b36461', 'title': "Variables", "desc": "Add numbers with variables"},
-  {'url': 'https://trinket.io/embed/python3/83b5f93350', 'title': "Strings", "desc": "Hanging on by a thread"},
-  {'url': 'https://trinket.io/embed/python3/85d8540699', 'title': "Casting", "desc": "Cast it aside"},
-  {'url': 'https://trinket.io/embed/python3/c5352637af', 'title': "Lists", "desc": "Karl Barx"},
-  {'url': 'https://trinket.io/embed/python3/f467749abb', 'title': "If Statements", "desc": "AI in a box"},
-  {'url': 'https://trinket.io/embed/python3/682732fad3', 'title': "While Loops", "desc": "Self-proclaimed best loop NA"},
-  {'url': 'https://trinket.io/embed/python3/7ec6e19d56', 'title': "For Loops", "desc": "If I had a nickel for i in range(100), i'd have $5.00"},
-  {'url': 'https://trinket.io/embed/python3/9d465e96e9', 'title': "Functions", "desc": "Functions? I hardly know her!"},
-  {'url': 'https://trinket.io/embed/python3/faa497cf91', 'title': "Functions: Demo", "desc": "I'm a new addition to your story :)"},
-  {'url': 'https://trinket.io/embed/python3/c1ffcc43c9', 'title': "User Input", "desc": "Sometimes it's better to not give users a choice"},
-  {'url': 'https://trinket.io/embed/python3/b5877d9501', 'title': "Scope", "desc": "Anything more is out of the scope of this course."},
-  {'url': 'https://trinket.io/embed/python3/27e3391f65', 'title': "Packages", "desc": "pip install pip"},
-
-]
+import { Link } from "gatsby"
 
 
 const TutorialsPage = () => {
-  const [currentTutorial, setcurrentTutorial] = useState(0)
-
-  const TutorialSelection = () => {
-    var tutorialElements = tutorials.map((value, index) => {
-      return (
-        <li><button onClick={() => setcurrentTutorial(index)}>
-        {value.title}
-        </button></li>
-      );
-    });
-  return <ol>{tutorialElements}</ol>
-  }
-
-  const NextTutorialButton = () => {
-    if((currentTutorial + 1) < tutorials.length){
-      return (
-        <button onClick={() => setcurrentTutorial(currentTutorial + 1)}>
-        Next Tutorial
-        </button>
-      );
-    }
-    else return null;
-  }
-
-  const PreviousTutorialButton = () => {
-    if((currentTutorial) > 0){
-      return (
-        <button onClick={() => setcurrentTutorial(currentTutorial - 1)}>
-        Previous Tutorial
-        </button>
-      );
-    }
-    else return null;
-  }
-
-  return (
+    return (
     <Layout>
-      <SEO title="Tutorials" />
-      <div className="tutorials-frame flex-container nav-spacing">
-        <div className="tutorial-row tutorial-navigation">
-          <TutorialSelection/>
-            <div>
-              <NextTutorialButton/>
-              <PreviousTutorialButton/>
-          </div>    
+        <SEO title="Tutorials" />
+        <div className="nav-spacing margin">
+            <div class="language-section">
+                <h1>Python</h1>
+                <hr/>
+                <p>If you don't have Python set up yet, you can learn how to <a href="/install-python" className="purple">here</a>.</p>
+                <div className="tutorial-intro-frame">
+                    <table>
+                        <tr>
+                        <th><h3><Link to="/python">Intro to Python</Link></h3></th>
+                            <td><p>Want to learn Python with no coding experience?</p></td>
+                        </tr>
+                        <tr>
+                            <th><h3><Link to="/tutorials/web-scraper">Web Scraping</Link></h3></th>
+                            <td><p>Ever wanted to scrape data off a web page and put it into your greedy little hands?<br/>Here you go!</p></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="language-section">
+                <h1>Java</h1>
+                <hr/>
+                <p>If you don't have Java set up yet, you can learn how to <a href="/" className="purple">here</a>.</p>
+                <div className="tutorial-intro-frame">
+                    <table>
+                        <tr>
+                            <th><h3><Link to="/java">Intro to Java</Link></h3></th>
+                            <td><p>Want to learn Java with some coding experience?</p></td>
+                            
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
-        <div className="tutorial-row tutorials"> 
-          <Tutorial url={tutorials[currentTutorial].url} title={tutorials[currentTutorial].title} desc={tutorials[currentTutorial].desc}/>
-        </div>
-      </div>
-      
-      
     </Layout>
-  );
+    );
 }
 
 export default TutorialsPage
