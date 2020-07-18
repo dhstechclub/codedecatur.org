@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useState }  from "react"
 import PropTypes from "prop-types"
 //import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
@@ -14,10 +14,47 @@ import "./layout.css"
 import "./base.css"
 import Logo from "../images/codecatur.png"
 
+function MobileNav() {
+  
+  const [open, setOpen] = React.useState(false);
+  return (
+    <nav className="mobile-nav">
+      <div id="left-align-nav">
+      <div className="flex-container">
+        <div className="hamburger-icon" onClick={() => {setOpen(!open)}}>
+            <div/>
+            <div/>
+            <div/>
+        </div>
+        <div className="nav-element" id="nav-logo">
+          <img src={Logo} id="main-image" alt="Code Decatur"></img>
+        </div>
+      </div>
+        
+        <div className={open ? "" : "hidden"}>
+          <div className="nav-element">
+            <Link to="/">Home</Link>
+          </div>
+          <div className="nav-element">
+            <Link to="/tutorials/">Tutorials</Link>
+          </div>
+          <div className="nav-element">
+            <Link to="/projects/">Projects</Link>
+          </div>
+          <div className="nav-element">
+            <Link to="/tools/">Tools</Link>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  );
+}
+
 
 function Nav() {
   return (
-    <nav>
+    <nav className="desktop-nav">
       <div id="left-align-nav">
         <div className="nav-element" id="nav-logo">
           <Link to="/"><img src={Logo} id="main-image" alt="Code Decatur"></img></Link>
@@ -53,6 +90,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+    <MobileNav/>
     <Nav/>
       {/**<Header siteTitle={data.site.siteMetadata.title} />**/}
       <div

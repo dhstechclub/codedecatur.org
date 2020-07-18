@@ -342,14 +342,35 @@ th.tutorial-list-table-element {
   margin-right: 16%;
 }
 
+.mobile-nav {
+  display: none;
+}
 
+.hamburger-icon div {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+}
+
+.hidden {
+  display: none;
+}
 
 /** For Mobile */
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
-  #nav-logo {
+  .desktop-nav {
     display: none;
+  }
+  .mobile-nav {
+    display: block;
+  }
+
+  #nav-logo {
+    position: absolute;
+   right: 0;
   }
   nav {
     padding-left: 0%;
@@ -361,14 +382,18 @@ th.tutorial-list-table-element {
   #banner-img {
     height: 30vw;
   }
-
   .main-desc h1 {
     font-size: 20px;
   }
   .main-desc p {
-    font-size: 20px;
+    font-size: 18px;
   }
-
+  .media-block h2 {
+    font-size: 35px;
+  }
+  .media-container {
+    font-size: 15px;;
+  }
   td.tutorial-list-table-element {
     padding-right: 0; 
   }
