@@ -357,10 +357,17 @@ th.tutorial-list-table-element {
   display: none;
 }
 
+#footer-frame {
+  padding-bottom: 20px;
+}
+
 /** For Mobile */
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
+  #main-image {
+    padding: 0;
+  }
   .desktop-nav {
     display: none;
   }
@@ -388,10 +395,15 @@ th.tutorial-list-table-element {
   .main-desc p {
     font-size: 18px;
   }
+  #inner-desc {
+    margin-bottom: 0px;
+    padding-bottom: 20px;
+  }
   .media-block h2 {
     font-size: 35px;
   }
   .media-container {
+    padding-top: 20px;
     font-size: 15px;;
   }
   td.tutorial-list-table-element {

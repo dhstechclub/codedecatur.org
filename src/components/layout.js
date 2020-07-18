@@ -27,7 +27,7 @@ function MobileNav() {
             <div/>
         </div>
         <div className="nav-element" id="nav-logo">
-          <img src={Logo} id="main-image" alt="Code Decatur"></img>
+        <Link to="/"><img src={Logo} id="main-image" alt="Code Decatur"></img></Link>
         </div>
       </div>
         
@@ -100,9 +100,11 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          <h1 className="footer-name">Code Decatur </h1> © {new Date().getFullYear()}, Built by
-          {` `}
-          <a href="https://github.com/xhayden" rel="noreferrer" target="_blank">Hayden Carpenter</a>
+          <div id="footer-frame">
+            <h1 className="footer-name">Code Decatur </h1> © {new Date().getFullYear()}, Built by
+            {` `}
+            <a href="https://github.com/xhayden" rel="noreferrer" target="_blank">Hayden Carpenter</a>
+          </div>
         </footer>
       </div>
     </>
