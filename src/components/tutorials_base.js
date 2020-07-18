@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 function OnlineIDE(props){
-    return <iframe src={props.url} width="100%" className="ide" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen title="Trinket IDE"></iframe>
+    return <iframe src={props.url} width="100%" className="ide" frameBorder="0" marginWidth="0" marginHeight="0" allowFullScreen title="Trinket IDE"></iframe>
 }
 
 function Tutorial(props){

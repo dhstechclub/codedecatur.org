@@ -14,10 +14,12 @@ export default function Template({ data, }) {
             <div className="course">
                 <h1>{frontmatter.title}</h1>
                 <table style={{"width": "30%"}}>
-                    <tr>
-                        <td><h4>{frontmatter.date}</h4></td>
-                        <td><h4>By {frontmatter.author}</h4></td>
-                    </tr>
+                  <tbody>
+                      <tr>
+                          <td><h4>{frontmatter.date}</h4></td>
+                          <td><h4>By {frontmatter.author}</h4></td>
+                      </tr>
+                  </tbody>
                 </table>            
                 <div
                 className="course-content"
