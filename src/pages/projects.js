@@ -34,7 +34,7 @@ const ProjectsPage = () => (
   <Layout>
     <SEO title="Projects" />
     <div className="projects-frame nav-spacing">
-        <h1>Projects</h1>
+        <h1 className="pixel-font" style={{"font-size": "60px"}}>Projects</h1>
         <h3>These projects have been created by Code Decatur members.</h3>
         <table>
             {authorSectionsArray.map((data, index) => {
