@@ -275,6 +275,9 @@ button {
   margin-right: 10%;
   text-align: center;
 }
+.projects-frame h1 {
+  font-size: 80px;
+}
 
 .margin { 
   margin-left: 10%;
