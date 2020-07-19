@@ -107,7 +107,7 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <footer>
           <div id="footer-frame">
-            <h1 className="footer-name">Code Decatur </h1> © {new Date().getFullYear()}, Built by
+            Code Decatur © {new Date().getFullYear()}, Built by
             {` `}
             <a href="https://github.com/xhayden" rel="noreferrer" target="_blank">Hayden Carpenter</a>
           </div>
