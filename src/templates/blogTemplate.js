@@ -16,6 +16,7 @@ export default function Template({ data, }) {
 
   return (
     <Layout>
+      <SEO name={frontmatter.title}/>
         <div className="course-container nav-spacing">
             <div className="course">
                 <h1>{frontmatter.title}</h1>

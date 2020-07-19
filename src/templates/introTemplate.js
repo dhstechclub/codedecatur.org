@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 function OnlineIDE(props){
     return <iframe src={props.url} width="100%" className="ide" frameBorder="0" marginWidth="0" marginHeight="0" allowFullScreen title="Trinket IDE"></iframe>
@@ -56,6 +57,7 @@ export default function Template ({ data, }) {
 
   return (
     <Layout>
+    <SEO name={frontmatter.title}/>
     <div className="tutorials-frame nav-spacing">
             <div className=" flex-container ">
                 <div className="tutorial-row tutorial-navigation">

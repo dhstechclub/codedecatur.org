@@ -1,7 +1,7 @@
 ---
 slug: "/blog/code-decatur-reborn"
 date: "2020-07-18"
-title: "Code Decatur"
+title: "Hello, Code Decatur."
 author: "Hayden Carpenter"
 featuredImage: "../images/codecatur.png"
 ---
