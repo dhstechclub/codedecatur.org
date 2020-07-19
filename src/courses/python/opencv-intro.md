@@ -5,7 +5,7 @@ title: "Introduction to Image Processing with OpenCV"
 author: "Carter Semrad"
 language: python
 difficulty: 2
-description: "Image processing is pretty neat."
+description: Images are pretty cool, but even cooler when they're processed
 ---
 
 ![Me with Canny Edge Detection](../../images/opencv-intro/Canny.png)
@@ -95,7 +95,7 @@ Here's the list of available colormaps as shown at the docs.opencv.org:
 
 ## Color Filtering
 
-Color filtering is also pretty important. In OpenCV, there are a couple of challenges to getting it working. Normal pixels in a raster image are stored as RGB (red, blue, and green). This makes filtering for a range of similar colors difficult. To account for this, we convert the image to HSV (hue, saturation, value). Hue is on a color wheel, so you can specify a range of 'degrees' on the wheel to get a range of similar colors. The only thing that's strange about OpenCV's implementation of this is that it's color wheel goes 0-180 degrees, with 0 and 180 being red. To convert RGB to HSV, we use the function `cv2.cvtColor(img, cv2.COLOR_BGR2HSV)` to convert an image to hsv. This function returns the converted image. Then, to do the actual color filtering, we can create a mask with the `cv2.inRange(img, lower, upper)` function. It takes the source image and two tuples as arguments, for a lower and upper range of color channels. HSV images contain three channels, one for hue, saturation, and value respectively. The inRange function returns a mask, which is like a normal image, but instead of being in RGB or HSV, it only has one channel for black or white. Each pixel will be white for true or black for false. Finally, we can re-apply the mask to the original image to get the result we want with `cv2.bitwise_and(img, img, mask=mask)`. The bitwise and function itself isn't necessary for this, but the part of it that applies the mask is helpful. Here's some sample code of these ideas:
+Color filtering is also pretty important. In OpenCV, there are a couple of challenges to getting it working. Normal pixels in a raster image are stored as BGR (blue, green, and red) in OpenCV, with the amount of blue, green, and red in each pixel. This makes filtering for a range of similar colors difficult. To account for this, we convert the image to HSV (hue, saturation, value). Hue is on a color wheel, so you can specify a range of 'degrees' on the wheel to get a range of similar colors. The only thing that's strange about OpenCV's implementation of this is that its color wheel goes 0-180 degrees, with 0 and 180 being red. To convert BGR to HSV, we use the function `cv2.cvtColor(img, cv2.COLOR_BGR2HSV)` to convert an image to hsv. This function returns the converted image. Then, to do the actual color filtering, we can create a mask with the `cv2.inRange(img, lower, upper)` function. It takes the source image and two tuples as arguments, for a lower and upper range of color channels. HSV images contain three channels, one for hue, saturation, and value respectively. The inRange function returns a mask, which is like a normal image, but instead of being in RGB or HSV, it only has one channel for black or white. Each pixel will be white for true or black for false. Finally, we can re-apply the mask to the original image to get the result we want with `cv2.bitwise_and(img, img, mask=mask)`. The bitwise and function itself isn't necessary for this, but the part of it that applies the mask is helpful. Here's some sample code of these ideas:
 
 ```
 import cv2
