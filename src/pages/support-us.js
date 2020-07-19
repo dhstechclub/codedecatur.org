@@ -19,7 +19,7 @@ export default function SupportUsPage() {
                 Thank you for caring about Computer Science and STEM here in Decatur.
             </p>
             <p>
-                Currently, we do not have donations and sponsorships set up.<br/>Feel free to email us at either <a href="mailto:93haydcarp@csdecatur.net">93haydcarp@csdecatur.net</a> or <a href="mailto:codedecatur@gmail.com"> codedecatur@gmail.com</a>.
+                Currently, we do not have donations and sponsorships set up.<br/>Feel free to email us at either <a className="uline" href="mailto:93haydcarp@csdecatur.net">93haydcarp@csdecatur.net</a> or <a className="uline"  href="mailto:codedecatur@gmail.com"> codedecatur@gmail.com</a>.
             </p>
             <table id="support-us-table" className="pixel-font">
                 <td><button><a href="">Donate</a></button></td>

@@ -170,8 +170,8 @@ a:hover {
   font-family: 'EditUndo', serif;
 }
 
-body {
-  
+.uline {
+  text-decoration: underline;
 }
 
 .media-container {

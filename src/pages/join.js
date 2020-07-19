@@ -17,9 +17,9 @@ export default function JoinPage() {
                 We have meetings on Wednesdays, but due to COVID-19, we are exclusively online, using this site and our Discord linked below.<br/>
             </p>
             <p>
-                Keep up to date about our status on <Link to="/blog">our blog</Link>.
+                Keep up to date about our status on <Link to="/blog" className="uline">our blog</Link>.
             </p>
-            <a href="https://discord.gg/8HVZDaE" target="_blank" rel="norefferer">Join us on Discord!</a>
+            <a href="https://discord.gg/8HVZDaE" target="_blank" rel="norefferer" className="uline">Join us on Discord!</a>
             <p>
 
             </p>
