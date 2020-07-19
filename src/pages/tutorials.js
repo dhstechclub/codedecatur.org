@@ -8,21 +8,20 @@ import { element } from "prop-types"
 
 
 
-const toggleLanguage = (langArr, lang, labelName) => {
+const toggleLanguage = (langArr, lang, checkboxName) => {
     langArr[lang] = !langArr[lang]
     let currentState = langArr[lang]
     
     let langElements = document.getElementsByClassName(lang);
     for(let i = 0; i < langElements.length; i++){
         if(currentState){
-            langElements[i].style.display = 'none';
-            document.getElementById(lang + "-checkbox").checked = true;
-            document.getElementById(labelName).style.textDecoration = "line-through";
+            langElements[i].style.display = 'block';
+            document.getElementById(checkboxName).style["background-color"] = 'rgba(0, 255, 0, 0.2)';
+            
         }
         else {
-            langElements[i].style.display = 'block';
-            document.getElementById(lang + "-checkbox").checked = false;
-            document.getElementById(labelName).style.textDecoration = "none";
+            langElements[i].style.display = 'none';
+            document.getElementById(checkboxName).style["background-color"] = 'rgba(255, 0, 0, 0.2)';
         }
         
     }
@@ -34,14 +33,14 @@ const LanguageCheckbox = (props) => {
     let labelName = `${props.language}-label`;
     let langUpper = props.language.charAt(0).toUpperCase() + props.language.slice(1)
     return (
-        <button style={{'margin-right': "20px"}} onClick={() => props.setlangs(toggleLanguage(props.langs, props.language, labelName))} id={checkboxName}><p htmlFor={checkboxName} id={labelName} style={{'margin-bottom': 0}}>{langUpper}</p></button>
+        <button style={{'margin-right': "20px", 'background-color': 'rgba(0, 255, 0, 0.2)'}} onClick={() => props.setlangs(toggleLanguage(props.langs, props.language, checkboxName))} id={checkboxName}><p htmlFor={checkboxName} id={labelName} style={{'margin-bottom': 0}}>{langUpper}</p></button>
     )
 }
 
 
 
 const NewTutorialPage = () => {
-    const [languages, setLanguages] = useState({"javascript": false, "python": false, "java": true, "c#": true, "c++": true});
+    const [languages, setLanguages] = useState({"javascript": true, "python": true, "java": true, "c#": true, "c++": true});
 
     return <Layout>
     <SEO title="Tutorials" />
