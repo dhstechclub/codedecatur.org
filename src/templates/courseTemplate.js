@@ -12,7 +12,7 @@ export default function Template({ data, }) {
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-      <SEO title={frontmatter.title}/>
+      <SEO title={frontmatter.title} author={frontmatter.author}/>
         <div className="course-container nav-spacing">
             <div className="course">
                 <h1>{frontmatter.title}</h1>

@@ -11,7 +11,7 @@ const InstallPythonPage = () => {
 
   return (
     <Layout>
-      <SEO title="Install Python" />
+      <SEO title="Install Python"/>
         <div id="python-install-frame">
             <h1>Local installation</h1>
             <img src={PythonImage1} alt="Python install"></img>
