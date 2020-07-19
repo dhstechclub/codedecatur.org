@@ -20,7 +20,7 @@ export default function Template({ data, }) {
         <div className="course-container nav-spacing">
             <div className="course">
                 <h1>{frontmatter.title}</h1>
-                <table style={{"width": "30%"}}>
+                <table>
                   <tbody>
                       <tr>
                           <td><h4>{frontmatter.date}</h4></td>

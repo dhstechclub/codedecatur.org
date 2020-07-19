@@ -381,7 +381,8 @@ th.tutorial-list-table-element {
 }
 
 .featured-image {
-  width: 800px;
+  max-width: 600px;
+  width: 70vw;
   padding-bottom: 20px;
 }
 
@@ -398,6 +399,26 @@ th.tutorial-list-table-element {
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
+  .featured-image {
+    width: 70vw;
+    padding-bottom: 20px;
+  }
+  .course h1 {
+    font-size: 24px;
+  }
+  .course h2 {
+    font-size: 22px;
+  }
+  .course h3 {
+    font-size: 20px;
+  }
+  .course h4 {
+    font-size: 18px;
+  }
+  .preview-image {
+    display: none;
+  }
+
   #main-image {
     padding: 0;
   }
