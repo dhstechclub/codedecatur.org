@@ -395,6 +395,20 @@ th.tutorial-list-table-element {
   width: 300px;
 }
 
+.projects-table td{
+  width: 20%;
+}
+
+.projects-table th{
+  width: 20%;
+}
+.projects-table {
+  min-width: 250px;
+  width: 40%;
+}
+
+
+
 /** For Mobile */
 
 @media only screen and (max-width: 768px) {

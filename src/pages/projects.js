@@ -36,7 +36,7 @@ const ProjectsPage = () => (
     <div className="projects-frame nav-spacing">
         <h3>These projects have been created by Code Decatur members.</h3>
         <hr></hr>
-        <table>
+        <table className="projects-table">
             {authorSectionsArray.map((data, index) => {
                 return <tbody>
                     {data.map((project, index) => {
