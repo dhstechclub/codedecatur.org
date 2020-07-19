@@ -4,7 +4,7 @@ date: "2020-07-18"
 title: "Creating (Bad) Flappy Bird in HTML5/Javascript"
 author: "Carter Semrad"
 language: javascript
-difficulty: 4
+difficulty: 3
 description: "Ever wanted to make flappy bird, but didn't want to do it well?"
 ---
 

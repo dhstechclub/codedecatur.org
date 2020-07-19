@@ -4,7 +4,7 @@ date: "2020-07-18"
 title: "Introduction to Image Processing with OpenCV"
 author: "Carter Semrad"
 language: python
-difficulty: 3
+difficulty: 2
 description: "Image processing is pretty neat."
 ---
 
