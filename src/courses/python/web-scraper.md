@@ -15,14 +15,14 @@ The answer to that question will allow you to get started.
 
 Let's take Yahoo Finance for example.
 
-![Percent Change In Cryptocurrency Value](../images/web-scraper/changepercent.png)
+![Percent Change In Cryptocurrency Value](../../images/web-scraper/changepercent.png)
 
 I want to the percent change in value from Yahoo Finances Cryptocurrency page
 (<https://finance.yahoo.com/cryptocurrencies>).
 
 To allow my scraper to easily find this data, I'm going to find the element in the HTML that this part of data corresponds to.
 
-![Inspector View](../images/web-scraper/inspector.png)
+![Inspector View](../../images/web-scraper/inspector.png)
 
 That gave me some good information. It may look a little crazy, but I know the data I'm looking for is going to be in a &lttd&gt element.  
 I also know the data is going to have the class "Va(m)" among others, and the aria-label "% Change".

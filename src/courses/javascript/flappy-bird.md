@@ -8,7 +8,7 @@ difficulty: 4
 description: "Ever wanted to make flappy bird, but didn't want to do it well?"
 ---
 
-![game](../images/flappy-bird/flappy.png)
+![game](../../images/flappy-bird/flappy.png)
 
 [Play the game](https://veryclevername3.github.io/hosting/flappyBirdClone/index.html)
 
@@ -199,7 +199,7 @@ function update(){
 ```
 
 If you open the index.html page in your browser right now, you should see a black circle on the left side of the page that falls on page load.
-![falling circle](../images/flappy-bird/circleFalling.png)
+![falling circle](../../images/flappy-bird/circleFalling.png)
 
 ## Setting up controls
 8.)
