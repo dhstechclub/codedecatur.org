@@ -40,14 +40,14 @@ import Img from "gatsby-image"
                     {data.allMarkdownRemark.nodes.map((node) => {
                         let featuredImgFluid = node.frontmatter.featuredImage.childImageSharp.fluid
                         return <tr>
-                            <td><div class="preview-image"><Img fluid={featuredImgFluid} /></div></td>
+                            <td><div className="preview-image"><Img fluid={featuredImgFluid} /></div></td>
                             <td className="blog-preview" >
                                 <div>
-                                <Link class="link-to-blog" to={node.frontmatter.slug} key={node.frontmatter.slug}>{node.frontmatter.title}</Link><br/>
+                                <Link className="link-to-blog" to={node.frontmatter.slug} key={node.frontmatter.slug}>{node.frontmatter.title}</Link><br/>
                                 By {node.frontmatter.author}<br/><br/>
                                 
-                                <div class="markdown-preview" dangerouslySetInnerHTML={{__html: node.excerpt}}></div>
-                                <Link class="link-to-blog read-more" to={node.frontmatter.slug} key={node.frontmatter.slug + "2"}>Read more...</Link><br/>
+                                <div className="markdown-preview" dangerouslySetInnerHTML={{__html: node.excerpt}}></div>
+                                <Link className="link-to-blog read-more" to={node.frontmatter.slug} key={node.frontmatter.slug + "2"}>Read more...</Link><br/>
                                 </div>
                             </td>
                         </tr>

@@ -57,7 +57,7 @@ export default function Template ({ data, }) {
 
   return (
     <Layout>
-    <SEO name={frontmatter.title}/>
+    <SEO title={frontmatter.title}/>
     <div className="tutorials-frame nav-spacing">
             <div className=" flex-container ">
                 <div className="tutorial-row tutorial-navigation">

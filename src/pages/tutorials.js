@@ -16,12 +16,12 @@ const toggleLanguage = (langArr, lang, checkboxName) => {
     for(let i = 0; i < langElements.length; i++){
         if(currentState){
             langElements[i].style.display = 'block';
-            document.getElementById(checkboxName).style["background-color"] = 'rgba(0, 255, 0, 0.2)';
+            document.getElementById(checkboxName).style["backgroundColor"] = 'rgba(0, 255, 0, 0.2)';
             
         }
         else {
             langElements[i].style.display = 'none';
-            document.getElementById(checkboxName).style["background-color"] = 'rgba(255, 0, 0, 0.2)';
+            document.getElementById(checkboxName).style["backgroundColor"] = 'rgba(255, 0, 0, 0.2)';
         }
         
     }
@@ -33,7 +33,7 @@ const LanguageCheckbox = (props) => {
     let labelName = `${props.language}-label`;
     let langUpper = props.language.charAt(0).toUpperCase() + props.language.slice(1)
     return (
-        <button style={{'margin-right': "20px", 'background-color': 'rgba(0, 255, 0, 0.2)'}} onClick={() => props.setlangs(toggleLanguage(props.langs, props.language, checkboxName))} id={checkboxName}><p htmlFor={checkboxName} id={labelName} style={{'margin-bottom': 0}}>{langUpper}</p></button>
+        <button style={{'marginRight': "20px", 'backgroundColor': 'rgba(0, 255, 0, 0.2)'}} onClick={() => props.setlangs(toggleLanguage(props.langs, props.language, checkboxName))} id={checkboxName}><p htmlFor={checkboxName} id={labelName} style={{'marginBottom': 0}}>{langUpper}</p></button>
     )
 }
 
@@ -79,13 +79,13 @@ const NewTutorialPage = () => {
                             stars += '⭐';
                         }
                         return <tr>
-                            <td className={`blog-preview ${node.frontmatter.language}`}>
+                                <td className={`blog-preview ${node.frontmatter.language}`}>
                                 <div>
-                                <Link className="link-to-blog" to={node.frontmatter.slug} key={node.frontmatter.slug}>{node.frontmatter.title}</Link><br/>
-                                {node.frontmatter.date}<br/>
-                                By {node.frontmatter.author}<br/>
-                                {stars}<br/>
-                                {node.frontmatter.description}
+                                    <Link className="link-to-blog" to={node.frontmatter.slug} key={node.frontmatter.slug}>{node.frontmatter.title}</Link><br/>
+                                    {node.frontmatter.date}<br/>
+                                    By {node.frontmatter.author}<br/>
+                                    {stars}<br/>
+                                    {node.frontmatter.description}
                                 </div>
                             </td>
                         </tr>

@@ -16,7 +16,7 @@ export default function Template({ data, }) {
 
   return (
     <Layout>
-      <SEO name={frontmatter.title}/>
+      <SEO title={frontmatter.title}/>
         <div className="course-container nav-spacing">
             <div className="course">
                 <h1>{frontmatter.title}</h1>
@@ -29,7 +29,7 @@ export default function Template({ data, }) {
                       </tr>
                   </tbody>
                 </table>  
-                <div class="featured-image"><Img fluid={featuredImgFluid} /></div>    
+                <div className="featured-image"><Img fluid={featuredImgFluid} /></div>    
                 <div
                 className="course-content"
                 dangerouslySetInnerHTML={{ __html: html }}
