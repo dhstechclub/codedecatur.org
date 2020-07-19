@@ -7,6 +7,7 @@ import InstagramLogo from "../images/instagram.png"
 import GithubLogo from "../images/github.png"
 import Potion from "../images/healthpotion.gif"
 import "../components/global.css"
+import { Link } from "gatsby"
 
 
 
@@ -24,7 +25,8 @@ function Media(){
   return (
     <div className="flex-container media-container">
       <MediaSubsection title="2019" info={<div><p>We were founded in 2019 under the name Cybersecurity Club. We participated in <a href="https://picoctf.com" rel="noreferrer" target="_blank">PicoCTF 2019</a>, a 'hacking' competition between high school students known as <a href="ctf">Capture the Flag</a>.</p></div>}/>
-      <MediaSubsection title="2020" info={<div><p>Our 2020 Year will start off with some coding challenges we will host here, at <span className="purple">codedecatur.org</span>.</p></div>}/>
+      <MediaSubsection title="2020" info={<div><p>Our 2020 Year will start off with some coding challenges we will host here, at <span className="purple">codedecatur.org</span>. 
+      Those challenges will come out periodically <Link to="/tutorials/">here</Link>. The content is student-driven and created by our members, as is all of the content on this site.</p></div>}/>
     </div>
     
   );
