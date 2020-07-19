@@ -45,7 +45,10 @@ function MobileNav() {
             <Link to="/projects/">Projects</Link>
           </div>
           <div className="nav-element">
-            <Link to="/tools/">Tools</Link>
+            <Link to="/support-us/">Support Us</Link>
+          </div>
+          <div className="nav-element">
+            <Link to="/join/">Join</Link>
           </div>
         </div>
       </div>
@@ -72,10 +75,10 @@ function Nav() {
           <Link to="/projects/">Projects</Link>
         </div>
         <div className="nav-element">
-          <Link to="/tools/">Tools</Link>
+            <Link to="/support-us/">Support Us</Link>
         </div>
         <div className="nav-element">
-          <Link to="/schedule/">Schedule</Link>
+          <Link to="/join/">Join</Link>
         </div>
       </div>
     </nav>

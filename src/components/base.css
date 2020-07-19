@@ -374,6 +374,14 @@ th.tutorial-list-table-element {
   font-size: 20px;
 }
 
+#support-us-table {
+  max-width: 600px;
+}
+
+#support-us-table button{
+  padding: 0.2em 0.2em 0.2em 0.2em;
+  font-size: 30px;
+}
 
 .blog-preview * {
 
@@ -417,6 +425,14 @@ th.tutorial-list-table-element {
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
+  #support-us-table {
+    max-width: 400px;
+  }
+  
+  #support-us-table button{
+    padding: 0.2em 0.2em 0.2em 0.2em;
+    font-size: 20px;
+  }
   .featured-image {
     width: 70vw;
     padding-bottom: 20px;

@@ -64,6 +64,11 @@ const ProjectsPage = () => (
         <br></br>
         <p>Ask and we'll add your project!</p>
     </div>
+    <div className="margin">
+        <h1 className="pixel-font">Tools</h1>
+        <hr></hr>
+        <ul><Link to="/karten/"><h3>Karten - Quick Flashcards for Different Languages</h3></Link></ul>
+    </div>
   </Layout>
 )
 
