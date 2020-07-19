@@ -1,7 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import diff from "../images/promo/diff.png"
+import cooltext from "../images/promo/cooltextchange.gif"
+
 
 export default function SupportUsPage() {
     return <Layout>

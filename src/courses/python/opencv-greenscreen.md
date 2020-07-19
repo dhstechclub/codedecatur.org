@@ -30,7 +30,7 @@ while True:
 ```
 
 ## Filtering by color
-To filter by color, we need to convert the image to HSV. This lets us set of a range of hues that are close to our greenscreen's color. My 'greenscreen' was the first result on my phone when I searched for "blue". To convert to HSV, we use the `cv2.cvtColor()` function. To create a mask that checks for that color, we use the `cv2.inRange()` function. The ranges I used for my blue were (100, 200, 120) and (120, 255, 255), for lower and upper respectively. Because of different webcam settings and phone settings, you may have to adjust these values. We also have to blur the image to make the mask less noisy. Putting these ideas in to code, we get something like this:
+To filter by color, we need to convert the image to HSV. This lets us set up a range of hues that are close to our greenscreen's color. My 'greenscreen' was the first result on my phone when I searched for "blue". To convert to HSV, we use the `cv2.cvtColor()` function. To create a mask that checks for that color, we use the `cv2.inRange()` function. The ranges I used for my blue were (100, 200, 120) and (120, 255, 255), for lower and upper respectively. Because of different webcam settings and phone settings, you may have to adjust these values. We also have to blur the image to make the mask less noisy. Putting these ideas into code, we get something like this:
 
 ```
 import cv2
@@ -58,7 +58,7 @@ This can be a little tricky to get the ranges correct for. If you got it correct
 ![mask](../../images/opencv-greenscreen/mask.png)
 
 ## Doing the greenscreen
-Applying a greenscreen is accomplished in three steps. First, we cut the mask out of the original image. Then, we only take the masked part of the image we want to apply over it. Finally, we add the pixels of these two images to get a final result. For the image we want to apply over the original, we'll just take a picture when the python program begins running:
+Applying a greenscreen is accomplished in three steps. First, we cut the mask out of the original image. Then, we only take the masked part of the image we want to apply over it. Finally, we add the pixels of these two images to get a final result. For the image we want to apply over the original, we'll just take a picture when the python program begins running, before the while loop:
 
 ```
 import cv2

@@ -19,7 +19,7 @@ export default function JoinPage() {
             <p>
                 Keep up to date about our status on <Link to="/blog" className="uline">our blog</Link>.
             </p>
-            <a href="https://discord.gg/8HVZDaE" target="_blank" rel="norefferer" className="uline">Join us on Discord!</a>
+            <a href="https://discord.gg/8HVZDaE" target="_blank" rel="noreferrer" className="uline">Join us on Discord!</a>
             <p>
 
             </p>

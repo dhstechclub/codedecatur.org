@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { graphql } from 'gatsby'
 
 function OnlineIDE(props){
     return <iframe src={props.url} width="100%" className="ide" frameBorder="0" marginWidth="0" marginHeight="0" allowFullScreen title="Trinket IDE"></iframe>

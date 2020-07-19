@@ -111,7 +111,7 @@ const Layout = ({ children }) => {
         <footer>
           <div id="footer-frame">
           <h1>
-          Code Decatur © {new Date().getFullYear()} | <a target="_blank" rel="norefferer" href="https://github.com/xHayden/codecatur-website">Github</a>
+          Code Decatur © {new Date().getFullYear()} | <a target="_blank" rel="noreferrer" href="https://github.com/xHayden/codecatur-website">Github</a>
           </h1>
           </div>
         </footer>
