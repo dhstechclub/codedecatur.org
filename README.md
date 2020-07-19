@@ -2,4 +2,4 @@
   Code Decatur is made with Gatsby.js
 </h1>
 
-#Website live at [codedecatur.org](https://codedecatur.org)
+Website live at [codedecatur.org](https://codedecatur.org)
