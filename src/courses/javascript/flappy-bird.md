@@ -3,6 +3,9 @@ slug: "/tutorials/javascript/flappy-bird"
 date: "2020-07-18"
 title: "Creating (Bad) Flappy Bird in HTML5/Javascript"
 author: "Carter Semrad"
+language: javascript
+difficulty: 4
+description: "Ever wanted to make flappy bird, but didn't want to do it well?"
 ---
 
 ![game](../images/flappy-bird/flappy.png)

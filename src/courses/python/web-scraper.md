@@ -3,6 +3,9 @@ slug: "/tutorials/python/web-scraper"
 date: "2020-07-17"
 title: "Web Scraper in Python using Selenium"
 author: "Hayden Carpenter"
+language: python
+difficulty: 2
+description: "Scraping the web, one step at a time."
 ---
 ## What are you trying to accomplish?
 The first thing you need to know is what you are trying to scrape from a webpage.  

@@ -63,6 +63,9 @@ function Nav() {
           <Link to="/tutorials/">Tutorials</Link>
         </div>
         <div className="nav-element">
+          <Link to="/blog/">Blog</Link>
+        </div>
+        <div className="nav-element">
           <Link to="/projects/">Projects</Link>
         </div>
         <div className="nav-element">

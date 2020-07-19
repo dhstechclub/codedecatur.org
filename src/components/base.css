@@ -366,6 +366,34 @@ th.tutorial-list-table-element {
   padding-bottom: 20px;
 }
 
+.blog-preview h1, .blog-preview h2, .blog-preview h3, .blog-preview h4 {
+  font-size: 20px;
+}
+
+
+.blog-preview * {
+
+}
+
+.link-to-blog {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.featured-image {
+  width: 800px;
+  padding-bottom: 20px;
+}
+
+.markdown-preview {
+  margin-bottom: 20px;
+  background-color: rgba(219, 219, 219, 0.233);
+}
+
+.preview-image {
+  width: 300px;
+}
+
 /** For Mobile */
 
 @media only screen and (max-width: 768px) {

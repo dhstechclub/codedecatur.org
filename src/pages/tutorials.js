@@ -1,119 +1,103 @@
-import React from "react"
+import React, { useState, ReactDOM } from "react"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { StaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
+import { element } from "prop-types"
 
 
-const TutorialsPage = () => {
-    return (
-    <Layout>
-        <SEO title="Tutorials" />
-        <div className="nav-spacing margin">
-            <div className="language-section">
-                <h1>Python</h1>
-                <hr/>
-                <p>If you don't have Python set up yet, you can learn how to <a href="/install-python" className="purple">here</a>.</p>
-                <div className="tutorial-intro-frame">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th className="tutorial-list-table-element"><h3><Link to="/python">Intro to Python</Link></h3></th>
-                                <td className="tutorial-list-table-element"><p>Want to learn Python with no coding experience?</p></td>
-                            </tr>
-                            <tr>
-                                <th className="tutorial-list-table-element"><h3><Link to="/tutorials/python/web-scraper">Web Scraping</Link></h3></th>
-                                <td className="tutorial-list-table-element"><p>Ever wanted to scrape data off a web page and put it into your greedy little hands?<br/>Here you go!</p></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div className="language-section">
-                <h1>Javascript</h1>
-                <hr/>
-                <p>If you don't have Javascript set up yet, you can learn how to <a href="/" className="purple">here</a>.</p>
-                <div className="tutorial-intro-frame">
-                    <table>
-                        <tbody>
-                        <tr>
-                                <th className="tutorial-list-table-element"><h3><Link to="/javascript">Intro to Javascript</Link></h3></th>
-                                <td className="tutorial-list-table-element"><p>Want to learn Javascript with some coding experience?</p></td>
-                            </tr>
-                            <tr>
-                                <th className="tutorial-list-table-element"><h3><Link to="/tutorials/javascript/flappy-bird">(Bad) Flappy Bird</Link></h3></th>
-                                <td className="tutorial-list-table-element"><p>Want to create a bad flappy bird clone with little to no actual help? This is the tutorial for you.</p></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div className="language-section">
-                <h1>Java</h1>
-                <hr/>
-                <p>If you don't have Java set up yet, you can learn how to <a href="/" className="purple">here</a>.</p>
-                <div className="tutorial-intro-frame">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th className="tutorial-list-table-element"><h3><Link to="/java">Intro to Java</Link></h3></th>
-                                <td className="tutorial-list-table-element"><p>Want to learn Java with some more coding experience?</p></td>
-                                
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div className="language-section">
-                <h1>C#</h1>
-                <hr/>
-                <p>If you don't have C# set up yet, you can learn how to <a href="/" className="purple">here</a>.</p>
-                <div className="tutorial-intro-frame">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th className="tutorial-list-table-element"><h3><Link to="/csharp">Intro to C#</Link></h3></th>
-                                <td className="tutorial-list-table-element"><p>Want to learn C#?</p></td>
-                                
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div className="language-section">
-                <h1>C++</h1>
-                <hr/>
-                <p>If you don't have C++ set up yet, you can learn how to <a href="/" className="purple">here</a>.</p>
-                <div className="tutorial-intro-frame">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th className="tutorial-list-table-element"><h3><Link to="/cplusplus">Intro to C++</Link></h3></th>
-                                <td className="tutorial-list-table-element"><p>Want to learn C++?</p></td>
-                                
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div className="language-section">
-                <h1>Assembly</h1>
-                <hr/>
-                <p>If you don't have Assembly set up yet, you can learn how to <a href="/" className="purple">here</a>.</p>
-                <div className="tutorial-intro-frame">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th className="tutorial-list-table-element"><h3><Link to="/assembly">Intro to ASM</Link></h3></th>
-                                <td className="tutorial-list-table-element"><p>Want to learn ASM? Why?</p></td>
-                                
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </Layout>
-    );
+
+const toggleLanguage = (langArr, lang, labelName) => {
+    langArr[lang] = !langArr[lang]
+    let currentState = langArr[lang]
+    
+    let langElements = document.getElementsByClassName(lang);
+    for(let i = 0; i < langElements.length; i++){
+        if(currentState){
+            langElements[i].style.display = 'none';
+            document.getElementById(lang + "-checkbox").checked = true;
+            document.getElementById(labelName).style.textDecoration = "line-through";
+        }
+        else {
+            langElements[i].style.display = 'block';
+            document.getElementById(lang + "-checkbox").checked = false;
+            document.getElementById(labelName).style.textDecoration = "none";
+        }
+        
+    }
+    return langArr
 }
 
-export default TutorialsPage
+const LanguageCheckbox = (props) => {
+    let checkboxName = `${props.language}-checkbox`;
+    let labelName = `${props.language}-label`;
+    let langUpper = props.language.charAt(0).toUpperCase() + props.language.slice(1)
+    return (
+        <button style={{'margin-right': "20px"}} onClick={() => props.setlangs(toggleLanguage(props.langs, props.language, labelName))} id={checkboxName}><p htmlFor={checkboxName} id={labelName} style={{'margin-bottom': 0}}>{langUpper}</p></button>
+    )
+}
+
+
+
+const NewTutorialPage = () => {
+    const [languages, setLanguages] = useState({"javascript": false, "python": false, "java": true, "c#": true, "c++": true});
+
+    return <Layout>
+    <SEO title="Tutorials" />
+    <div className="nav-spacing margin">
+        <h1 className="pixel-font">Tutorials</h1>
+        <div>
+            <LanguageCheckbox langs={languages} setlangs={setLanguages} language="python"/>
+            <LanguageCheckbox langs={languages} setlangs={setLanguages} language="javascript"/>
+            {/*<LanguageCheckbox langs={languages} setlangs={setLanguages} language="java"/>
+            <LanguageCheckbox langs={languages} setlangs={setLanguages} language="c#"/>
+            <LanguageCheckbox langs={languages} setlangs={setLanguages} language="c++"/>*/}
+        </div>
+        <table>
+            <StaticQuery query={graphql`  
+                            query CoursesQuery {
+                                allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/courses/"}}, sort: {fields: frontmatter___difficulty, order: ASC}) {
+                                    nodes {
+                                        frontmatter {
+                                            slug
+                                            date
+                                            author
+                                            title
+                                            language
+                                            difficulty
+                                            description
+                                        }
+                                    }
+                                }
+                            }
+                        `}
+            render={data => {
+                return <tbody>
+                    {data.allMarkdownRemark.nodes.map((node) => {
+                        let stars = 'Difficulty: '
+                        for(let i = 0; i < node.frontmatter.difficulty; i++){
+                            stars += '⭐';
+                        }
+                        return <tr>
+                            <td className={`blog-preview ${node.frontmatter.language}`}>
+                                <div>
+                                <Link className="link-to-blog" to={node.frontmatter.slug} key={node.frontmatter.slug}>{node.frontmatter.title}</Link><br/>
+                                {node.frontmatter.date}<br/>
+                                By {node.frontmatter.author}<br/>
+                                {stars}<br/>
+                                {node.frontmatter.description}
+                                </div>
+                            </td>
+                        </tr>
+                    })}
+                    
+                </tbody>
+            }}  
+            />
+        </table>
+    </div>
+    </Layout>
+ }
+
+export default NewTutorialPage

@@ -1,10 +1,12 @@
-import React from "react"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import TutorialsPage from "../components/tutorials_base.js"
-
-
-const tutorials = [
+---
+slug: "/tutorials/python/intro"
+date: "2020-07-16"
+title: "Intro to Python"
+author: "Hayden Carpenter and Carter Semrad"
+language: python
+difficulty: 1
+description: "New to Python? Start here."
+tutorials: [
     {'url': 'https://trinket.io/embed/python3/88aeefac23', 'title': "Hello World!", "desc": "An introduction to Python"},
     {'url': 'https://trinket.io/embed/python3/70a2b36461', 'title': "Variables", "desc": "Add numbers with variables"},
     {'url': 'https://trinket.io/embed/python3/83b5f93350', 'title': "Strings", "desc": "Hanging on by a thread"},
@@ -18,16 +20,6 @@ const tutorials = [
     {'url': 'https://trinket.io/embed/python3/c1ffcc43c9', 'title': "User Input", "desc": "Sometimes it's better to not give users a choice"},
     {'url': 'https://trinket.io/embed/python3/b5877d9501', 'title': "Scope", "desc": "Anything more is out of the scope of this course."},
     {'url': 'https://trinket.io/embed/python3/27e3391f65', 'title': "Packages", "desc": "pip install pip"},
-  
-  ]
-
-const PythonPage = () => {
-    return (
-    <Layout>
-      <SEO title="Python Tutorial" />
-        <TutorialsPage tutorials={tutorials}></TutorialsPage>
-    </Layout>
-    );
-}
-
-export default PythonPage
+    ]
+---
+> ###[Learn How To Install Python Locally](/install-python)

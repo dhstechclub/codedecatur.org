@@ -38,8 +38,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `other`,
-        path: `${__dirname}/src/other`,
+        name: `blog`,
+        path: `${__dirname}/src/blog`,
       },
     },
     {
