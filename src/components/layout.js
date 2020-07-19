@@ -107,9 +107,9 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <footer>
           <div id="footer-frame">
-            Code Decatur © {new Date().getFullYear()}, Built by
-            {` `}
-            <a href="https://github.com/xhayden" rel="noreferrer" target="_blank">Hayden Carpenter</a>
+          <h1>
+          Code Decatur © {new Date().getFullYear()} | <a target="_blank" rel="norefferer" href="https://github.com/xHayden/codecatur-website">Github</a>
+          </h1>
           </div>
         </footer>
       </div>
