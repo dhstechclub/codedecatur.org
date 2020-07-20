@@ -82,7 +82,7 @@ export const query = graphql`
   query {
     file(relativePath: { eq: "indexback.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1080, quality: 90) {
+        fluid(maxWidth: 1500, quality: 90) {
           ...GatsbyImageSharpFluid
           
         }
