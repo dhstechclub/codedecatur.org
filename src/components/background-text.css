@@ -1,0 +1,7 @@
+.background-text-correct {
+    background: inherit;
+    background-clip: text;
+    color: transparent;
+    filter: invert(1);
+    filter: invert(1) grayscale(1) contrast(9)
+}
