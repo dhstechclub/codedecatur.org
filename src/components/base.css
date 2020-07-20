@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 
 @font-face {
   font-family: "EditUndo";
@@ -23,14 +24,17 @@
 html, body {
   height: 100%;
   margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgb(236, 236, 236);
+  
 }
 
 
 .App {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    text-align: center;
     height: 100%;
+    background-color: rgb(146, 224, 255);
+    box-shadow: rgba(0, 0, 0, 0.144) 1px 3px 5px 2px;
 }
 
 .App-logo {
@@ -71,7 +75,7 @@ html, body {
 
 nav {
   z-index: 999;
-  background-color: white;
+  background-color: rgb(238, 238, 238);
   top: 0;
   position: sticky;
   font-weight: 600;
@@ -97,9 +101,22 @@ a:hover, a:visited, a {
   text-align: left;
 }
 
-#main-image {
+#main-image { /*Nav image*/
     margin: 0;
     height: 27.5px;
+}
+
+#mainpage-image-mobile {
+  display: none;
+}
+
+#tagline-frame {
+  width: 50%;
+}
+#mainpage-image {
+  width: 50%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .nav-element, .nav-element img, .nav-element a {
@@ -136,22 +153,6 @@ a:hover, a:visited, a {
     justify-content: center;
 }
 
-.socials img{
-    height: 70px;
-    width: 70px;
-}
-
-.media-block {
-  display: inline-block;
-  margin-left: 1%;
-  margin-right: 1%;
-  width: 50%;
-  
-}
-
-.media-block a:link, .media-block a:visited, .media-block a:active, .media-block a:hover{
-  text-decoration: underline;
-}
 
 a:link, a:visited, a:active {
   color: black;
@@ -165,12 +166,6 @@ a:hover {
 .language-section h1{
   font-size: 50px;
   font-family: 'EditUndo', cursive;
-}
-
-.media-block h2 {
-  color: #363636;
-  font-size: 50px;
-  font-family: 'EditUndo', serif;
 }
 
 .uline {
@@ -188,7 +183,32 @@ a:hover {
     font-weight: 400;
     justify-content: center;
     padding-top: 50px;
-    
+}
+
+.media-block h2 {
+  color: #363636;
+  font-size: 50px;
+}
+
+.socials img{
+  height: 70px;
+  width: 70px;
+}
+
+.media-block {
+display: inline-block;
+margin-left: 1%;
+margin-right: 1%;
+width: 49%;
+margin-top: 100px;
+margin-bottom: 100px;
+padding-top: 20px;
+border-top: 4px solid rgb(62, 108, 121);
+border-bottom: 4px solid rgb(62, 108, 121);
+}
+
+.media-block a:link, .media-block a:visited, .media-block a:active, .media-block a:hover{
+text-decoration: underline;
 }
 
 .main-desc {
@@ -208,12 +228,10 @@ p {
 }
 
 .main-desc h1 {
-  color: rgb(34, 34, 34);
-  word-spacing: 20px;
-  line-height: 1.1;
-  font-size: 100px;
+  color: rgb(34, 34, 34); 
+  font-size: 3.8vw;
   margin-bottom: 60px;
-  font-family: 'Karmatic', serif;
+  
 }
 
 #banner-img {
@@ -222,11 +240,19 @@ p {
   object-fit: cover;
 }
 
+#learn-button {
+  color: rgb(255, 255, 255);
+  /*background-color: rgba(48, 117, 197, 0.794);*/
+  background-color: rgba(163, 54, 190, 0.794);
+  margin: 0;
+  padding: 1vh 10px 1vh 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 30px;
+}
 
 #inner-desc {
   margin-top: 50px;
-  margin-bottom: 150px;
-  
 }
 
 .purple {
@@ -235,7 +261,7 @@ p {
 
 
 .pixel-font {
-    font-family: 'EditUndo', serif;
+    /**font-family: 'EditUndo', serif;*/
 }
 
 .tutorials-frame {
@@ -384,12 +410,13 @@ th.tutorial-list-table-element {
 }
 
 #footer-frame {
+  padding-top: 20px;
   padding-bottom: 20px;
+  margin-bottom: 0px;
   font-size: 18px;
   font-weight: 400;
   display: inline-block;
   font-family: 'Open Sans', sans-serif;
-  margin-block-end: 0;
   height: 100%;
 }
 
@@ -397,6 +424,7 @@ th.tutorial-list-table-element {
   display: inline-block;
   font-weight: 400;
   font-size: 18px;
+  margin-bottom: 0px;
 }
 
 .blog-preview h1, .blog-preview h2, .blog-preview h3, .blog-preview h4 {
@@ -457,6 +485,20 @@ th.tutorial-list-table-element {
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
+  #mainpage-image-mobile {
+    display: block;
+    width: 100%;
+    margin-bottom: 10%;
+  }
+
+  #tagline-frame {
+    width: 100%;
+  }
+  #mainpage-image {
+    display: none;
+    
+  }
+
   .outer-slideshow-promo-container {
     padding-bottom: 20px;
     display: flex;

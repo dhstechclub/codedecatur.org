@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -18,12 +17,13 @@ const projects = [
 ]
 let authorSections = {}
 projects.map((data, index) => {
-    if(authorSections[data.author] == undefined){
+    if(authorSections[data.author] === undefined){
         authorSections[data.author] = [{"url": data.url, "name": data.name, "author": data.author, "redirect": data.redirect}]
     }
     else {
         authorSections[data.author].push({"url": data.url, "name": data.name, "author": data.author, "redirect": data.redirect})
     }
+    return 0;
 })
 
 let authorSectionsArray = []
@@ -42,10 +42,10 @@ const ProjectsPage = () => (
                 return <tbody>
                     {data.map((project, index) => {
                         let target = "_blank"
-                        if(project.redirect == false){
+                        if(project.redirect === false){
                             target = ""
                         }
-                        if(index == 0){
+                        if(index === 0){
                             return (
                             <tr>
                                 <th rowSpan={data.length}>{project.author}</th>

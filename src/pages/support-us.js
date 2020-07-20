@@ -21,7 +21,7 @@ export default function SupportUsPage() {
                 Currently, we do not have donations and sponsorships set up.<br/>Feel free to email us at either <a className="uline" href="mailto:93haydcarp@csdecatur.net">93haydcarp@csdecatur.net</a> or <a className="uline"  href="mailto:codedecatur@gmail.com"> codedecatur@gmail.com</a>.
             </p>
             <table id="support-us-table" className="pixel-font">
-                <td><button><a href="">Donate</a></button></td>
+                <td><button><a href="/">Donate</a></button></td>
                 <td><button><a href="mailto:93haydcarp@csdecatur.net">Sponsor us</a></button></td>
                 <td><button><a href="mailto:93haydcarp@csdecatur.net">Become a Mentor</a></button></td>
             </table>

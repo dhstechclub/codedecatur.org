@@ -26,7 +26,7 @@ function Media(){
   return (
     <div className="flex-container media-container">
       <MediaSubsection title="2019" info={<div><p>We were founded in 2019 under the name Cybersecurity Club. We participated in <a href="https://picoctf.com" rel="noreferrer" target="_blank">PicoCTF 2019</a>, a 'hacking' competition between high school students known as <a href="ctf">Capture the Flag</a>.</p></div>}/>
-      <MediaSubsection title="2020" info={<div><p>Our 2020 Year will start off with some coding challenges we will host here, at <span className="purple">codedecatur.org</span>. 
+      <MediaSubsection title="2020" info={<div><p>Our 2020 Year will start off with some coding challenges we will host here, at <a href="https://codedecatur.org">codedecatur.org</a>. 
       Those challenges will come out periodically <Link to="/tutorials/">here</Link>. The content is student-driven and created by our members, as is all of the content on this site.</p></div>}/>
     </div>
     
@@ -49,29 +49,37 @@ const IndexPage = ({ data }) => (
     <SEO title="Homepage" name="Code Decatur"></SEO>
     <div className="App">
       <div id="introduction" >
-      <div style={{paddingBottom: 40}}>
-        <Img fluid={data.file.childImageSharp.fluid}
-        objectFit="cover"
-        objectPosition="50% 50%"
-        alt="Background"
-        style={{height: '13vw', width: '100%'}}
-        ></Img>
-      </div>
-        
-        {//<img src={Background} id="banner-img" alt="Pixelart Banner"></img>
-        }
-        <div className="main-desc">
-          <h1 className="pixel-font">{'Code Decatur'}</h1>
-          <div id="inner-desc">
-            <p>We offer hands-on coding experience for all ranges of <br/>skill with our interactive lessons and activities.</p>
-            <p> From beginner to expert, our club will help you<br/>develop your skills in a no-pressure environment.</p>
+        <div className="main-desc" style={{paddingTop: "5%"}}>
+          <div id="mainpage-image-mobile">
+            <Img fluid={data.file.childImageSharp.fluid}
+              objectFit="cover"
+              objectPosition="50% 50%"
+              alt="Background"
+              style={{width: '100%'}}
+            ></Img>
           </div>
-          <hr></hr>
+          <div className="flex-container" style={{height: "100%"}}>
+            <div id="tagline-frame">
+              <h1 style={{marginRight: "auto", textAlign: "left"}}>Innovation Starts With Education</h1>
+              <div id="inner-desc">
+                <p>Our club offers hands-on coding experience for all ranges of <br/>skill with our interactive lessons and activities.</p>
+                <p> From beginner to expert, we will help you<br/>develop your skills in a no-pressure environment.</p>
+                <br/>
+                <button id="learn-button">Learn more</button>
+              </div>
+            </div>
+            <div id="mainpage-image">
+            <Img fluid={data.file.childImageSharp.fluid}
+              objectFit="cover"
+              objectPosition="50% 50%"
+              alt="Background"
+              style={{width: '100%'}}
+            ></Img>
+            </div>
+          </div>
         </div>
       </div>
       <Media/>
-      <video autoPlay muted loop playsInLine style={{"height": '160px', marginBottom: '30px'}}><source src={Potion} type="video/webm" /></video>
-
       <hr></hr>
       <Socials/>
     </div>
@@ -80,9 +88,9 @@ const IndexPage = ({ data }) => (
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "indexback.jpg" }) {
+    file(relativePath: { eq: "2019/DEF-Image.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1500, quality: 90) {
+        fluid(maxWidth: 800, quality: 90) {
           ...GatsbyImageSharpFluid
           
         }
