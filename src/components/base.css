@@ -4,6 +4,8 @@
 @font-face {
   font-family: "EditUndo";
   src: url("../fonts/editundo.ttf");
+  font-display: swap;
+  
 }
 
 @font-face {
@@ -14,6 +16,7 @@
 @font-face {
   font-family: "Joystix";
   src: url("../fonts/joystix\ monospace.ttf");
+  font-display: swap;
 }
 
 

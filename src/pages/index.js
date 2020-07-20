@@ -6,6 +6,7 @@ import FacebookLogo from "../images/facebook.png"
 import InstagramLogo from "../images/instagram.png"
 import GithubLogo from "../images/github.png"
 import Potion from "../images/healthpotion.gif"
+import Background from "../images/indexback.jpg"
 import "../components/global.css"
 import { Link } from "gatsby"
 
@@ -36,7 +37,7 @@ function Media(){
 function Introduction() {
   return (
     <div id="introduction">
-      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/01073865290819.5d61d475f0072.jpg" id="banner-img" alt="Pixelart Banner"></img>
+      <img src={Background} id="banner-img" alt="Pixelart Banner"></img>
       <div className="main-desc">
         <h1 className="pixel-font">{'Code Decatur'}</h1>
         <div id="inner-desc">

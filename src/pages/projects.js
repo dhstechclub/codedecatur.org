@@ -1,13 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import SmartSlider from "react-smart-slider";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import hexa from "../images/promo/hexa.png"
-import host from "../images/promo/host.png"
-import portfolio from "../images/promo/redditwedidit.png"
-import mte from "../images/promo/miditoearsketch.png"
-import spotlight from "../images/promo/spotlight.png"
 
 
 const projects = [
@@ -22,32 +16,6 @@ const projects = [
     {"url": "https://frc4026.com", "name": "Scout Janssen: Graphs and Statistics", "author": "Carter Semrad"},
 
 ]
-
-const DummyCaption = ({ caption }) => (<div className="image-slider-caption">{caption}</div>)
-   
-const slidesArray = [
-{
-    url: host,
-    childrenElem: <DummyCaption caption="'HOST' by Carter Semrad" />
-},
-{
-    url: mte,
-    childrenElem: <DummyCaption caption="'Midi To Earksetch' by Hayden Carpenter and Carter Semrad" />
-},
-{
-    url: hexa,
-    childrenElem: <DummyCaption caption="'Hexa' by Carter Semrad and Quinn O'Keefe" />
-},
-{
-    url: portfolio,
-    childrenElem: <DummyCaption caption="'Scout Janssen' by Hayden Carpenter" />
-},
-{
-    url: spotlight,
-    childrenElem: <DummyCaption caption="'Spotlight' by Carter Semrad and Hayden Carpenter" />
-},
-];
-
 let authorSections = {}
 projects.map((data, index) => {
     if(authorSections[data.author] == undefined){
@@ -69,13 +37,6 @@ const ProjectsPage = () => (
     <div className="projects-frame nav-spacing">
         <h3>These projects have been created by Code Decatur members.</h3>
         <hr></hr>
-        <div>
-            <div className="outer-slideshow-promo-container">
-                <div className="slideshow-promo-container">
-                    <SmartSlider slides={slidesArray} autoSlide={false} />
-                </div>
-            </div>
-        </div>
         <table className="projects-table">
             {authorSectionsArray.map((data, index) => {
                 return <tbody>
