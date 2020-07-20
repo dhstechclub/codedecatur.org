@@ -9,6 +9,7 @@ import Potion from "../images/healthpotion.gif"
 import Background from "../images/indexback.jpg"
 import "../components/global.css"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 
 
@@ -34,22 +35,6 @@ function Media(){
 }
 
 
-function Introduction() {
-  return (
-    <div id="introduction">
-      <img src={Background} id="banner-img" alt="Pixelart Banner"></img>
-      <div className="main-desc">
-        <h1 className="pixel-font">{'Code Decatur'}</h1>
-        <div id="inner-desc">
-          <p>We offer hands-on coding experience for all ranges of <br/>skill with our interactive lessons and activities.</p>
-          <p> From beginner to expert, our club will help you<br/>develop your skills in a no-pressure environment.</p>
-        </div>
-        <hr></hr>
-      </div>
-    </div>
-  );
-}
-
 const Socials = () => {
   return <div className="flex-container center socials">
     <a target="_blank" rel="noreferrer" href="https://www.instagram.com/codecatur/"><img src={InstagramLogo} alt="Instagram Logo"/></a>
@@ -60,17 +45,50 @@ const Socials = () => {
 }
 
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Homepage" name="Code Decatur"></SEO>
     <div className="App">
-      <Introduction/>
+      <div id="introduction" >
+      <div style={{paddingBottom: 40}}>
+        <Img fluid={data.file.childImageSharp.fluid}
+        objectFit="cover"
+        objectPosition="50% 50%"
+        alt="Background"
+        style={{height: '13vw', width: '100%'}}
+        ></Img>
+      </div>
+        
+        {//<img src={Background} id="banner-img" alt="Pixelart Banner"></img>
+        }
+        <div className="main-desc">
+          <h1 className="pixel-font">{'Code Decatur'}</h1>
+          <div id="inner-desc">
+            <p>We offer hands-on coding experience for all ranges of <br/>skill with our interactive lessons and activities.</p>
+            <p> From beginner to expert, our club will help you<br/>develop your skills in a no-pressure environment.</p>
+          </div>
+          <hr></hr>
+        </div>
+      </div>
       <Media/>
       <img src={Potion} style={{"height": '160px'}} alt="Potion gif"/>
       <hr></hr>
       <Socials/>
     </div>
   </Layout>
-)
+);
+
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "indexback.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1080, quality: 90) {
+          ...GatsbyImageSharpFluid
+          
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
