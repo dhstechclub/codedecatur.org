@@ -5,8 +5,7 @@ import DiscordLogo from "../images/discord.png"
 import FacebookLogo from "../images/facebook.png"
 import InstagramLogo from "../images/instagram.png"
 import GithubLogo from "../images/github.png"
-import Potion from "../images/healthpotion.gif"
-import Background from "../images/indexback.jpg"
+import Potion from "../images/healthpotion.webm"
 import "../components/global.css"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
@@ -71,7 +70,8 @@ const IndexPage = ({ data }) => (
         </div>
       </div>
       <Media/>
-      <img src={Potion} style={{"height": '160px'}} alt="Potion gif"/>
+      <video autoPlay muted loop playsInLine style={{"height": '160px', marginBottom: '30px'}}><source src={Potion} type="video/webm" /></video>
+
       <hr></hr>
       <Socials/>
     </div>
