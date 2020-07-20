@@ -80,7 +80,6 @@ const IndexPage = ({ data }) => (
         </div>
       </div>
       <Media/>
-      <hr></hr>
       <Socials/>
     </div>
   </Layout>
