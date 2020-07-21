@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Img from "gatsby-image"
+import Gear from "../images/gear_640.png"
 
 const projects = [
     {"url": "https://codedecatur.org/", "name": "Code Decatur", "author": "Hayden Carpenter", "redirect": false},
@@ -36,7 +36,7 @@ const ProjectsPage = ({ data }) => (
     <SEO title="Projects" />
     <div className="projects-frame nav-spacing">
         <center>
-        <Img fluid={data.file.childImageSharp.fluid} alt="Gear" style={{width: '100px', marginBottom: "50px"}}></Img>
+        <img src={Gear} alt="gear" style={{width: '100px', marginBottom: "50px"}}></img>
         </center>
         <h3>These projects have been created by Code Decatur members.</h3>
         <hr></hr>
@@ -72,16 +72,3 @@ const ProjectsPage = ({ data }) => (
 )
 
 export default ProjectsPage
-
-export const query2 = graphql`
-  query {
-    file(relativePath: { eq: "gear_640.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 100, quality: 90) {
-          ...GatsbyImageSharpFluid
-          
-        }
-      }
-    }
-  }
-`
