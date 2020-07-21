@@ -20,6 +20,18 @@
   font-display: swap;
 }
 
+.purple-button {
+  color: white;
+  margin: 0;
+  padding: 0.5vh 10px 0.5vh 10px;
+  border-radius: 5px;
+  font-weight: 600;
+  background-color: rgba(163, 54, 190, 0.792);
+}
+
+.purple-button a:hover, .purple-button a:visited, #learn-button a, #learn-button a:link, #learn-button a:visited, #learn-button a:hover, .purple-button a:link{
+  color: rgb(255, 255, 255);
+}
 
 html, body {
   height: 100%;
@@ -168,7 +180,8 @@ a:hover {
   font-family: 'EditUndo', cursive;
 }
 
-.uline {
+
+.uline:visited, .uline, .uline a:link, .uline:hover {
   text-decoration: underline;
 }
 
@@ -223,7 +236,7 @@ p {
 
 .main-desc p {
     
-  font-size: 25px;
+  font-size: calc(16px + 6 * ((60vw - 320px) / 680));
   
 }
 
@@ -259,6 +272,39 @@ p {
   color: #5500c3 !important;
 }
 
+.margin-more {
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+#about-description {
+  line-height: 1.4em;
+  margin-left: 2%;
+  max-width: 700px;
+  font-size: 20px;
+}
+
+#about-description li {
+  margin-bottom: 40px;
+}
+
+#about-image {
+  width: 60%;
+  padding-left: 50px;
+  float: right;
+}
+
+#about-banner {
+  text-align: center;
+  padding-top: calc(2% + 20px);
+  padding-bottom: 2%;
+  margin-bottom: 2%;
+  /*background-color: rgb(146, 224, 255);*/
+}
+
+#about-banner h1 {
+  font-size: 3vw;
+}
 
 .pixel-font {
     /**font-family: 'EditUndo', serif;*/
@@ -284,6 +330,10 @@ p {
 
 .tutorial-navigation button {
   width: 100%;
+  color: white;
+  background-color: rgba(163, 54, 190, 0.792);
+  padding: 0.5vh 0px 0.5vh 0px;
+  border-radius: 3px;
 }
 
 .tutorial-row {
@@ -480,11 +530,20 @@ th.tutorial-list-table-element {
   height: 50vh !important;
 }
 
+.gatsby-resp-image-image {
+  z-index: 0 !important;
+}
 
 /** For Mobile */
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
+  #about-banner h1 {
+    font-size: 40px;
+  }
+  #about-image {
+    display: none;
+  }
   #mainpage-image-mobile {
     display: block;
     width: 100%;

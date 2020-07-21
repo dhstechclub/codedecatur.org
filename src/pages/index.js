@@ -5,7 +5,6 @@ import DiscordLogo from "../images/discord.png"
 import FacebookLogo from "../images/facebook.png"
 import InstagramLogo from "../images/instagram.png"
 import GithubLogo from "../images/github.png"
-import Potion from "../images/healthpotion.webm"
 import "../components/global.css"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
@@ -65,7 +64,7 @@ const IndexPage = ({ data }) => (
                 <p>Our club offers hands-on coding experience for all ranges of <br/>skill with our interactive lessons and activities.</p>
                 <p> From beginner to expert, we will help you<br/>develop your skills in a no-pressure environment.</p>
                 <br/>
-                <button id="learn-button">Learn more</button>
+                <button id="learn-button"><Link to="/about-us">Learn more</Link></button>
               </div>
             </div>
             <div id="mainpage-image">
