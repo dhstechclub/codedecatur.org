@@ -59,7 +59,7 @@ const IndexPage = ({ data }) => (
           </div>
           <div className="flex-container" style={{height: "100%"}}>
             <div id="tagline-frame">
-              <h1 style={{marginRight: "auto", textAlign: "left"}}>Innovation starts with Education</h1>
+              <h1 style={{marginRight: "auto", textAlign: "left"}}>Innovation starts<br/>with Education</h1>
               <div id="inner-desc">
                 <p>Our club offers hands-on coding experience for all ranges of <br/>skill with our interactive lessons and activities.</p>
                 <p> From beginner to expert, we will help you<br/>develop your skills in a no-pressure environment.</p>
