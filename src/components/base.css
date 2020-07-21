@@ -244,7 +244,7 @@ p {
   color: rgb(34, 34, 34); 
   font-size: 3.8vw;
   margin-bottom: 60px;
-  
+  max-width: 900px;
 }
 
 #banner-img {
@@ -553,6 +553,7 @@ th.tutorial-list-table-element {
   #tagline-frame {
     width: 100%;
   }
+
   #mainpage-image {
     display: none;
     
