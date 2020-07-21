@@ -61,8 +61,8 @@ const IndexPage = ({ data }) => (
             <div id="tagline-frame">
               <h1 style={{marginRight: "auto", textAlign: "left"}}>Innovation starts<br/>with Education</h1>
               <div id="inner-desc">
-                <p>Our club offers hands-on coding experience for all ranges of <br/>skill with our interactive lessons and activities.</p>
-                <p> From beginner to expert, we will help you<br/>develop your skills in a no-pressure environment.</p>
+                <p>Our club offers hands-on coding experience for all<br/>skill levels with our interactive lessons and activities.</p>
+                <p>Whether you're a beginner or an expert, we'll help you<br/>develop your skills in a no-pressure environment and<br/>create projects worth sharing.</p>
                 <br/>
                 <button id="learn-button"><Link to="/about-us">Learn more</Link></button>
               </div>
