@@ -53,6 +53,10 @@ function SEO({ description, keywords, url, author, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `twitter:title`,
+          content: title,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },

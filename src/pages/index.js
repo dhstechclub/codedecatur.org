@@ -8,7 +8,7 @@ import GithubLogo from "../images/github.png"
 import "../components/global.css"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-
+import { graphql } from "gatsby"
 
 
 function MediaSubsection(props){
@@ -26,7 +26,7 @@ function Media(){
     <div className="flex-container media-container">
       <MediaSubsection title="2019" info={<div><p>We were founded in 2019 under the name Cybersecurity Club. We participated in <a href="https://picoctf.com" rel="noreferrer" target="_blank">PicoCTF 2019</a>, a 'hacking' competition between high school students known as <a href="ctf">Capture the Flag</a>.</p></div>}/>
       <MediaSubsection title="2020" info={<div><p>Our 2020 Year will start off with some coding challenges we will host here, at <a href="https://codedecatur.org">codedecatur.org</a>. 
-      Those challenges will come out periodically <Link to="/tutorials/">here</Link>. The content is student-driven and created by our members, as is all of the content on this site.</p></div>}/>
+      Those challenges will come out periodically on our <Link to="/tutorials/">tutorials page</Link>. The content is student-driven and created by our members, as is all of the content on this site.</p></div>}/>
     </div>
     
   );
@@ -64,7 +64,7 @@ const IndexPage = ({ data }) => (
                 <p>Our club offers hands-on coding experience for all<br/>skill levels with our interactive lessons and activities.</p>
                 <p>Whether you're a beginner or an expert, we'll help you<br/>develop your skills in a no-pressure environment and<br/>create projects worth sharing.</p>
                 <br/>
-                <button id="learn-button"><Link to="/about-us">Learn more</Link></button>
+                <button id="learn-button"><Link to="/about-us">About us</Link></button>
               </div>
             </div>
             <div id="mainpage-image">

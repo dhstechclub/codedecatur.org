@@ -9,17 +9,6 @@
   
 }
 
-@font-face {
-  font-family: "Karmatic";
-  src: url("../fonts/karmatic.ttf");
-}
-
-@font-face {
-  font-family: "Joystix";
-  src: url("../fonts/joystix\ monospace.ttf");
-  font-display: swap;
-}
-
 .purple-button {
   color: white;
   margin: 0;
