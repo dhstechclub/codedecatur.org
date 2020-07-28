@@ -232,7 +232,7 @@ text-decoration: underline;
   margin-left: 15%;
   margin-right: 15%;
   padding: 3% 3% 3% 3%;
-  box-shadow: rgba(0, 0, 0, 0.144) 1px 3px 5px 2px;
+  box-shadow: rgba(0, 0, 0, 0.144) 1px 3px 0px 2px;
 }
 
 p {
