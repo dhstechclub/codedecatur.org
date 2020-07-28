@@ -38,6 +38,11 @@ html, body {
     box-shadow: rgba(0, 0, 0, 0.144) 1px 3px 5px 2px;
 }
 
+.App hr {
+  margin: 0;
+  height: 2px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -183,13 +188,21 @@ a:hover {
     margin-right: 10%;
     font-size: 20px;
     font-weight: 400;
-    justify-content: center;
     padding-top: 50px;
+    padding-bottom: 50px;
+    
 }
-
+.media-sub-container {
+  justify-content: center;
+  align-items: center;
+}
 .media-block h2 {
   color: #363636;
   font-size: 50px;
+}
+
+.socials {
+  margin-top: 5%;
 }
 
 .socials img{
@@ -198,15 +211,15 @@ a:hover {
 }
 
 .media-block {
-display: inline-block;
-margin-left: 1%;
-margin-right: 1%;
-width: 49%;
-margin-top: 100px;
-margin-bottom: 100px;
-padding-top: 20px;
-border-top: 4px solid rgba(0, 0, 0, 0.25);
-border-bottom: 4px solid rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  text-align: center;
+  width: 40%;
+}
+
+.image-block {
+  display: inline-block;
+  margin-left: 10%;
+  width: 20%;
 }
 
 .media-block a:link, .media-block a:visited, .media-block a:active, .media-block a:hover{
@@ -214,9 +227,12 @@ text-decoration: underline;
 }
 
 .main-desc {
-    margin-left: 10%;
-    margin-right: 10%;
-
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 3% 3% 3% 3%;
+  box-shadow: rgba(0, 0, 0, 0.144) 1px 3px 5px 2px;
 }
 
 p {
@@ -225,13 +241,13 @@ p {
 
 .main-desc p {
     
-  font-size: calc(16px + 6 * ((60vw - 320px) / 680));
+  font-size: calc(16px + 6 * ((40vw - 320px) / 680));
   
 }
 
 .main-desc h1 {
   color: rgb(34, 34, 34); 
-  font-size: 3.8vw;
+  font-size: calc(2vw + 20px);
   margin-bottom: 60px;
   max-width: 900px;
 }
@@ -247,14 +263,15 @@ p {
   /*background-color: rgba(48, 117, 197, 0.794);*/
   background-color: rgba(163, 54, 190, 0.794);
   margin: 0;
-  padding: 1vh 10px 1vh 10px;
+  padding: 10px 10px 10px 10px;
   border-radius: 5px;
   font-weight: 600;
-  font-size: 30px;
+  font-size: 17px;
 }
 
 #inner-desc {
   margin-top: 50px;
+  padding-right: 50px;
 }
 
 .purple {
@@ -542,6 +559,10 @@ th.tutorial-list-table-element {
   #tagline-frame {
     width: 100%;
   }
+  #learn-button {
+    
+
+  }
 
   #mainpage-image {
     display: none;
@@ -617,7 +638,8 @@ th.tutorial-list-table-element {
     height: 30vw;
   }
   .main-desc {
-    
+    margin-left: 10%;
+    margin-right: 10%;
   }
   .main-desc h1 {
     font-size: 40px;
@@ -631,12 +653,17 @@ th.tutorial-list-table-element {
     margin-bottom: 0px;
     padding-bottom: 20px;
   }
+  .media-block {
+    width: 50%;
+  }
   .media-block h2 {
     font-size: 35px;
   }
   .media-container {
     padding-top: 20px;
-    font-size: 15px;;
+    font-size: 15px;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   td.tutorial-list-table-element {
     padding-right: 0; 
