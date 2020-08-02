@@ -33,10 +33,11 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
-      - { label: "Programming Language", name: "language", widget: "string" }
+      - { label: "Programming Language", name: "language", widget: "select", options: ["python", "javascript", "c", "cplusplus", "csharp", "java"] }
       - { label: "Difficulty", name: "difficulty", widget: "string" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Draft", name: "draft", widget: "boolean", required: false }
       - { label: "Hide", name: "hide", widget: "boolean", required: false }
+      - { label: "Slug", name: "slug (url)", widget: "hidden", default: "tutorials/{{language}}/{{title}}"}
