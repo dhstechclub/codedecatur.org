@@ -14,17 +14,28 @@ collections:
     label: "Blog Post"
     folder: "src/blog"
     create: true
-    slug: "{{slug}}"
+    slug: "/blog/{{title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Featured Image", name: "featuredImage", widget: "image"}
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - {
-          label: "Slug (link)",
-          name: "slug",
-          widget: "string",
-        }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Draft", name: "draft", widget: "boolean", required: false }
+      - { label: "Hide", name: "hide", widget: "boolean", required: false }
+
+  - name: "tutorial"
+    label: "Tutorial"
+    folder: "src/courses/{{language}}"
+    create: true
+    slug: "/tutorials/{{language}}/{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Programming Language", name: "language", widget: "string" }
+      - { label: "Difficulty", name: "difficulty", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Draft", name: "draft", widget: "boolean", required: false }
       - { label: "Hide", name: "hide", widget: "boolean", required: false }

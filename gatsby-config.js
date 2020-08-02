@@ -144,5 +144,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-preact`,
+    `gatsby-plugin-netlify-cache`,
   ],
 }
