@@ -8,13 +8,7 @@ publish_mode: editorial_workflow
 site_url: https://codedecatur.org
 media_folder: src/images
 public_folder: /images
----
-slug: "/blog/code-decatur-reborn"
-date: "2020-07-18"
-title: "Hello, Code Decatur."
-author: "Hayden Carpenter"
-featuredImage: "../images/codecatur.png"
----
+
 collections:
   - name: "blog"
     label: "Blog Post"
