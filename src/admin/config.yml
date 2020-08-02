@@ -8,7 +8,13 @@ publish_mode: editorial_workflow
 site_url: https://codedecatur.org
 media_folder: src/images
 public_folder: /images
-
+---
+slug: "/blog/code-decatur-reborn"
+date: "2020-07-18"
+title: "Hello, Code Decatur."
+author: "Hayden Carpenter"
+featuredImage: "../images/codecatur.png"
+---
 collections:
   - name: "blog"
     label: "Blog Post"
@@ -17,14 +23,9 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Cover", name: "cover", widget: "image", required: false }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "featuredImage", name: "cover", widget: "image", required: false }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - {
-          label: "Description",
-          name: "description",
-          widget: "string",
-          required: false,
-        }
       - {
           label: "Slug (link)",
           name: "slug",
@@ -32,6 +33,5 @@ collections:
           required: false,
         }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Draft", name: "draft", widget: "boolean", required: false }
       - { label: "Hide", name: "hide", widget: "boolean", required: false }
