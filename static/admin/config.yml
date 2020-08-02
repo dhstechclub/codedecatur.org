@@ -14,6 +14,8 @@ collections:
     label: "Blog Post"
     folder: "src/blog"
     create: true
+    media_folder: ''
+    public_folder: ''
     slug: "blog/{{title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -29,6 +31,8 @@ collections:
     folder: "src/courses"
     path: "{{language}}/{{title}}"
     create: true
+    media_folder: {{filename}}
+    public_folder: {{filename}}
     slug: "tutorials/{{language}}/{{title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
