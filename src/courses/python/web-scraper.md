@@ -1,38 +1,39 @@
 ---
-slug: "/tutorials/python/web-scraper"
-date: "2020-07-17"
-title: "Web Scraper in Python using Selenium"
-author: "Hayden Carpenter"
+title: Web Scraper in Python using Selenium
+author: Hayden Carpenter
 language: python
 difficulty: 2
-description: "Scraping the web, one step at a time."
+description: Scraping the web, one step at a time.
+date: 2020-07-17
+slug: /tutorials/python/web-scraper
 ---
 ## What are you trying to accomplish?
-The first thing you need to know is what you are trying to scrape from a webpage.  
+
+The first thing you need to know is what you are trying to scrape from a webpage.\
 Is it the url, the content, a specific element on the page...?
 
 The answer to that question will allow you to get started.
 
 Let's take Yahoo Finance for example.
 
-![Percent Change In Cryptocurrency Value](../../images/web-scraper/changepercent.png)
+![Percent Change In Cryptocurrency Value](web-scraper-in-python-using-selenium/changepercent.png)
 
 I want to the percent change in value from Yahoo Finances Cryptocurrency page
 (<https://finance.yahoo.com/cryptocurrencies>).
 
 To allow my scraper to easily find this data, I'm going to find the element in the HTML that this part of data corresponds to.
 
-![Inspector View](../../images/web-scraper/inspector.png)
+![Inspector View](web-scraper-in-python-using-selenium/inspector.png)
 
-That gave me some good information. It may look a little crazy, but I know the data I'm looking for is going to be in a &lttd&gt element.  
+That gave me some good information. It may look a little crazy, but I know the data I'm looking for is going to be in a &lttd&gt element.\
 I also know the data is going to have the class "Va(m)" among others, and the aria-label "% Change".
 
 Okay! We're probably good to get started!
 
 ## Creating the file
 
-For this tutorial, we're going to use Selenium.  
-Selenium is a package that acts as a headless web browser.  
+For this tutorial, we're going to use Selenium.\
+Selenium is a package that acts as a headless web browser.\
 It allows you to act as a browser, even when you aren't one without much hassle during setup.
 Other methods could be faster, but we aren't making thousands of requests per second.
 
@@ -48,6 +49,7 @@ I would create a folder that will hold both your python file and your webdriver.
 Speaking of that python file, create a new python file named scraper.py.
 
 In your command prompt, or Git Bash (as we at Code Decatur prefer), type 'pip install selenium'
+
 ```
 pip install selenium
 ```
@@ -96,15 +98,13 @@ It's a little more complicated if you look into it, but generally, you only have
 
 <deckgo-highlight-code language="python">
 <code slot="code">
-xpath = "//tagname[@attribute='value']"
+xpath = "//tagname\[@attribute='value']"
 #// is the current node we search from
 #tagname is the html tagname
 #@attribute is the attribute, in our case, aria-label
 #value is the value of the attribute
 </code>
 </deckgo-highlight-code>
-
-
 
 ```
 from selenium import webdriver
@@ -123,9 +123,6 @@ driver.quit()
 
 We can see that if we run this code, we get an element back with the type WebElement.
 However, we can see that this is only one element, but we can see theres an entire column of % change values.
-
-
-> <div>So, lets change driver.find_element_by_xpath(xpath) to driver.find_elements_by_xpath(xpath)</div>
 
 ```
 driver.find_elements_by_xpath(xpath)
@@ -154,6 +151,5 @@ driver.quit()
 Yes! We got all of the data! Now we can use this data in any project we want!
 
 There's a lot of functionality you can get out of Selenium. Feel free to experiment.
-
 
 > Check out the docs: <https://selenium-python.readthedocs.io/>
