@@ -63,6 +63,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Homepage" name="Code Decatur"></SEO>
+      <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       <div className="App">
         <div id="introduction" >
           <div className="main-desc">
