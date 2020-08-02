@@ -73,6 +73,15 @@ const NewTutorialPage = () => {
             render={data => {
                 return <tbody>
                     {data.allMarkdownRemark.nodes.map((node) => {
+                        let slug;
+                        if(node.frontmatter.slug == undefined || node.frontmatter.slug == ""){
+                            slug = `/tutorials/${node.frontmatter.language}/${node.frontmatter.title}`;
+                            slug = slug.replace(/\s/g, '-').toLowerCase();
+                            slug = encodeURI(slug);
+                        }
+                        else {
+                            slug = node.frontmatter.slug;
+                        }
                         let stars = 'Difficulty: '
                         for(let i = 0; i < node.frontmatter.difficulty; i++){
                             stars += '⭐';
@@ -80,7 +89,8 @@ const NewTutorialPage = () => {
                         return <tr>
                                 <td className={`blog-preview ${node.frontmatter.language}`}>
                                 <div>
-                                    <Link className="link-to-blog" to={node.frontmatter.slug} key={node.frontmatter.slug}>{node.frontmatter.title}</Link><br/>
+                                
+                                    <Link className="link-to-blog" to={slug} key={slug}>{node.frontmatter.title}</Link><br/>
                                     {node.frontmatter.date}<br/>
                                     By {node.frontmatter.author}<br/>
                                     {stars}<br/>

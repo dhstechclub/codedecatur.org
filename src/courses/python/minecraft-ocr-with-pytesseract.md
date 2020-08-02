@@ -1,5 +1,4 @@
 ---
-slug: "/tutorials/python/ocr-minecraft-pytesseract"
 date: "2020-07-21"
 title: "Minecraft OCR With PyTesseract"
 author: "Hayden Carpenter"
