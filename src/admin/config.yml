@@ -40,4 +40,4 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Draft", name: "draft", widget: "boolean", required: false }
       - { label: "Hide", name: "hide", widget: "boolean", required: false }
-      - { label: "Slug (url)", name: "slug", widget: "hidden", default: `tutorials/{{language}}/{{title}}`}
+      - { label: "Slug (url)", name: "slug", widget: "hidden", default: "tutorials/" + language + "/" + title}
