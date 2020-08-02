@@ -1,17 +1,37 @@
 backend:
-  name: codecatur-website
+  name: git-gateway
+  repo: codecatur-website/xhayden.github.io
+  branch: master
+  site_domain: codedecatur.org
 
+publish_mode: editorial_workflow
+site_url: https://codedecatur.org
 media_folder: src/images
-public_folder: src/images
-
+public_folder: /images
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: "blog"
+    label: "Blog Post"
+    folder: "src/blog"
     create: true
+    slug: "{{slug}}"
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: datetime }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Cover", name: "cover", widget: "image", required: false }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - {
+          label: "Description",
+          name: "description",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Slug (link)",
+          name: "slug",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Draft", name: "draft", widget: "boolean", required: false }
+      - { label: "Hide", name: "hide", widget: "boolean", required: false }

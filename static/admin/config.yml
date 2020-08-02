@@ -1,9 +1,13 @@
 backend:
   name: git-gateway
+  repo: codecatur-website/xhayden.github.io
   branch: master
+  site_domain: codedecatur.org
 
-media_folder: static/media
-public_folder: /media
+publish_mode: editorial_workflow
+site_url: https://codedecatur.org
+media_folder: src/images
+public_folder: /images
 
 collections:
   - name: "blog"
