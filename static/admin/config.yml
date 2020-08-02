@@ -14,7 +14,7 @@ collections:
     label: "Blog Post"
     folder: "src/blog"
     create: true
-    slug: "/blog/{{title}}"
+    slug: "blog/{{title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
@@ -26,9 +26,10 @@ collections:
 
   - name: "tutorial"
     label: "Tutorial"
-    folder: "src/courses/{{language}}"
+    folder: "src/courses"
+    path: "{{language}}/{{title}}"
     create: true
-    slug: "/tutorials/{{language}}/{{title}}"
+    slug: "tutorials/{{language}}/{{title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
