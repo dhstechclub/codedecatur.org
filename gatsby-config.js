@@ -25,6 +25,7 @@ module.exports = {
         publicPath: `admin`,
         htmlTitle: `Content Manager`,
         includeRobots: false,
+        modulePath: `${__dirname}/src/admin/_cms.js`,
       },
     },
     {
