@@ -31,8 +31,8 @@ collections:
     folder: "src/courses"
     path: "{{language}}/{{title}}"
     create: true
-    media_folder: {{filename}}
-    public_folder: {{filename}}
+    media_folder: "{{title}}"
+    public_folder: "{{title}}"
     slug: "tutorials/{{language}}/{{title}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
