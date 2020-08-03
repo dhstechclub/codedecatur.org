@@ -1,11 +1,11 @@
 ---
-slug: "/tutorials/python/opencv-intro"
-date: "2020-07-18"
-title: "Introduction to Image Processing with OpenCV"
-author: "Carter Semrad"
+title: Introduction to Image Processing with OpenCV
+author: Carter Semrad
 language: python
 difficulty: 2
 description: Images are pretty cool, but even cooler when they're processed
+date: July 23, 2020
+slug: /tutorials/python/opencv-intro
 ---
 
 ![Me with Canny Edge Detection](../../images/opencv-intro/Canny.png)

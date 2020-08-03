@@ -18,6 +18,29 @@ module.exports = {
     siteUrl: `https://codedecatur.org`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        enableIdentityWidget: true,
+        publicPath: `admin`,
+        htmlTitle: `Content Manager`,
+        includeRobots: false,
+        modulePath: `${__dirname}/src/admin/_cms.js`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-netlify-cms-paths`,
+      options: {
+        // Path to your Netlify CMS config file
+        cmsConfig: `/static/admin/config.yml`
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-netlify-admin',
+      options: {
+          adminPath: `${__dirname}/src/admin`
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -79,6 +102,7 @@ module.exports = {
               maxWidth: 800,
             },
           },
+          `gatsby-plugin-netlify-cms-paths`,
           {
             resolve: `gatsby-remark-highlight-code`
           },
@@ -120,5 +144,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-preact`,
+    `gatsby-plugin-netlify-cache`,
   ],
 }

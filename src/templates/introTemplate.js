@@ -72,6 +72,13 @@ export default function Template ({ data, }) {
                     <Tutorial url={tutorials[currentTutorial].url} title={tutorials[currentTutorial].title} desc={tutorials[currentTutorial].desc}/>
                     <div dangerouslySetInnerHTML={{ __html: html }}></div>
                 </div>
+                <div className="tutorial-row tutorial-navigation-mobile">
+                    <TutorialSelection/>
+                    <div>
+                        <NextTutorialButton/>
+                        <PreviousTutorialButton/>
+                    </div>    
+                </div>
             </div>
         </div>
     </Layout>
@@ -84,7 +91,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date
         slug
         title
         author

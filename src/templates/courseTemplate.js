@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 deckDeckGoHighlightElement();
 
 
-
 export default function Template({ data, }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
@@ -35,12 +34,11 @@ export default function Template({ data, }) {
   )
 }
 export const pageQuery = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+  query($title: String!) {
+    markdownRemark(frontmatter: { title: { eq: $title } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
-        slug
+        date
         title
         author
       }

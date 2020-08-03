@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+const { node } = require("prop-types")
+
 // You can delete this file if you're not using it
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
@@ -24,6 +26,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             node {
               frontmatter {
                 slug
+                language
+                title
               }
             }
           }
@@ -60,6 +64,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             node {
               frontmatter {
                 slug
+                language
+                title
               }
             }
           }
@@ -72,14 +78,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       reporter.panicOnBuild(`Error while running GraphQL query.`)
       return
     }
-  
+    
     courseResult.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      let slugString;
+      if(node.frontmatter.slug == undefined || node.frontmatter.slug == ""){
+        slugString = `/tutorials/${node.frontmatter.language}/${node.frontmatter.title}`;
+        slugString = slugString.replace(/\s/g, '-').toLowerCase();
+        slugString = encodeURI(slugString);
+      }
+      else {
+        slugString = node.frontmatter.slug;
+      }
+
       createPage({
-        path: node.frontmatter.slug,
+        path: slugString,
         component: courseTemplate,
         context: {
           // additional data can be passed via context
-          slug: node.frontmatter.slug,
+          title: node.frontmatter.title,
         },
       })
     })
@@ -106,3 +122,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       })
     })
   }
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /bad-module/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+}
