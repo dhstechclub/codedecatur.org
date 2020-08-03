@@ -5,7 +5,7 @@ language: python
 difficulty: 2
 description: Did you know that the Mandalorian doesn't use greenscreen for their
   backgrounds?
-date: December 18, 2019
+date: July 19, 2020
 slug: /tutorials/python/opencv-greenscreen
 ---
 ![the greenscreen](../../images/opencv-greenscreen/example.png)
