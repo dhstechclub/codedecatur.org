@@ -13,11 +13,12 @@ const projects = [
     {"url": "https://veryclevername3.github.io/DifferentialEquations/", "name": "Differential Equations Modeling", "author": "Carter Semrad"},
     {"url": "https://veryclevername3.itch.io/host", "name": "HOST (Game)", "author": "Carter Semrad"},
     {"url": "https://frc4026.com", "name": "Scout Janssen: Graphs and Statistics", "author": "Carter Semrad"},
-    {"url": "", "name": "Outrospection RPG", "author": "Matias Devred"},
-    {"url": "", "name": "Celsior (.casm Emulator)", "author": "Matias Devred"},
-    {"url": "", "name": "ChASM (IDE and Compiler)", "author": "Matias Devred"},
-    {"url": "", "name": "Celsior (.casm Emulator)", "author": "Colin Sandage"},
-    {"url": "", "name": "ChASM (IDE and Compiler)", "author": "Colin Sandage"},
+    {"url": "", "name": "Outrospection RPG", "author": "Matias Devred", "redirect": false},
+    {"url": "", "name": "Celsior (.casm Emulator)", "author": "Matias Devred", "redirect": false},
+    {"url": "", "name": "ChASM (IDE and Compiler)", "author": "Matias Devred", "redirect": false},
+    {"url": "", "name": "Celsior (.casm Emulator)", "author": "Colin Sandage", "redirect": false},
+    {"url": "", "name": "ChASM (IDE and Compiler)", "author": "Colin Sandage", "redirect": false},
+    {"url": "", "name": "Phalanx", "author": "Colin Sandage", "redirect": false},
     
 
 ]
