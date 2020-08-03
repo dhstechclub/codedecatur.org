@@ -18,7 +18,7 @@ const projects = [
     {"url": "", "name": "ChASM (IDE and Compiler)", "author": "Matias Devred", "redirect": false},
     {"url": "", "name": "Celsior (.casm Emulator)", "author": "Colin Sandage", "redirect": false},
     {"url": "", "name": "ChASM (IDE and Compiler)", "author": "Colin Sandage", "redirect": false},
-    {"url": "", "name": "Phalanx", "author": "Colin Sandage", "redirect": false},
+    {"url": "https://github.com/HSF-2003/Phalanx", "name": "Phalanx", "author": "Colin Sandage"},
     
 
 ]
