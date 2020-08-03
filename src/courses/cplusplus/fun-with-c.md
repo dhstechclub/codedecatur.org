@@ -2,7 +2,7 @@
 title: Why you should learn C++
 author: Matias
 language: cplusplus
-difficulty: 1
+difficulty: 3
 description: aka fun with the heap
 date: August 3, 2020
 draft: true
@@ -15,9 +15,9 @@ For example, let's take this code:
 ```java
 ArrayList<Car> carList;
 
-for (int i = 0; i < 9999; i++)
+for (int carNum = 0; carNum < 9999; carNum++)
 {
-  Car theCar = new Car();
+  Car theCar = new Car(carNum);
   carList.add(theCar);
 }
 ```
@@ -30,4 +30,16 @@ In the example code above, the heap is initially grown to store an `ArrayList` o
 
 NOTE: This is assuming a straightforward interpretation of the code by the compiler. It is possible that the code could be automatically optimized by Java to avoid the double allocation in the for loop. It's just not guaranteed, especially for more complex code.
 
-Now, how could we do this better in C++? Let's see...
+Now, let's see how we can do this in C++.
+
+```cpp
+std::vector<Car> carList;
+carList.reserve(9999); // heap allocation!
+
+for (int carNum = 0; carNum < 9999; carNum++)
+{
+  carList.emplace_back(carNum); // create new Car(carNum) in the reserved space
+}
+```
+
+Let's break down the code. First, `carList` is created, and we reserve space for 9999 `Car`s. This is our first and last heap allocation. Then, the loop "emplaces" new `Car`s into the list. This is not a heap allocation, because we are directly inserting the new `Car` into the already-allocated space.
