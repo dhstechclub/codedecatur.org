@@ -1,11 +1,11 @@
 ---
-slug: "/tutorials/javascript/flappy-bird"
-date: "2020-07-18"
-title: "Creating (Bad) Flappy Bird in HTML5/Javascript"
-author: "Carter Semrad"
+title: Creating (Bad) Flappy Bird in HTML5/Javascript
+author: Carter Semrad
 language: javascript
 difficulty: 3
-description: "Ever wanted to make flappy bird, but didn't want to do it well?"
+description: Ever wanted to make flappy bird, but didn't want to do it well?
+date: July 20, 2020
+slug: /tutorials/javascript/flappy-bird
 ---
 
 ![game](../../images/flappy-bird/flappy.png)
