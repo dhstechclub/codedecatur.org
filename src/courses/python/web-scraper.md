@@ -4,7 +4,7 @@ author: Hayden Carpenter
 language: python
 difficulty: 2
 description: Scraping the web, one step at a time.
-date: 2020-07-18T00:18:22.151Z
+date: July 17, 2020
 slug: /tutorials/python/web-scraper
 ---
 ## What are you trying to accomplish?
