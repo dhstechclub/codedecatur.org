@@ -13,6 +13,12 @@ const projects = [
     {"url": "https://veryclevername3.github.io/DifferentialEquations/", "name": "Differential Equations Modeling", "author": "Carter Semrad"},
     {"url": "https://veryclevername3.itch.io/host", "name": "HOST (Game)", "author": "Carter Semrad"},
     {"url": "https://frc4026.com", "name": "Scout Janssen: Graphs and Statistics", "author": "Carter Semrad"},
+    {"url": "", "name": "Outrospection RPG", "author": "Matias Devred"},
+    {"url": "", "name": "Celsior", "author": "Matias Devred"},
+    {"url": "", "name": "ChASM", "author": "Matias Devred"},
+    {"url": "", "name": "Celsior", "author": "Colin Sandage"},
+    {"url": "", "name": "ChASM", "author": "Colin Sandage"},
+    
 
 ]
 let authorSections = {}
