@@ -35,9 +35,8 @@ const LanguageCheckbox = (props) => {
         langUpper = "C#";
     } else if(langUpper == "Cplusplus"){
         langUpper = "C++";
-    } else {
-        continue;
-    }
+    } 
+    
     return (
         <button style={{'marginRight': "20px", 'backgroundColor': 'rgba(0, 255, 0, 0.2)'}} onClick={() => props.setlangs(toggleLanguage(props.langs, props.language, checkboxName))} id={checkboxName}><p htmlFor={checkboxName} id={labelName} style={{'marginBottom': 0}}>{langUpper}</p></button>
     )
