@@ -72,6 +72,13 @@ export default function Template ({ data, }) {
                     <Tutorial url={tutorials[currentTutorial].url} title={tutorials[currentTutorial].title} desc={tutorials[currentTutorial].desc}/>
                     <div dangerouslySetInnerHTML={{ __html: html }}></div>
                 </div>
+                <div className="tutorial-row tutorial-navigation-mobile">
+                    <TutorialSelection/>
+                    <div>
+                        <NextTutorialButton/>
+                        <PreviousTutorialButton/>
+                    </div>    
+                </div>
             </div>
         </div>
     </Layout>

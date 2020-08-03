@@ -320,16 +320,18 @@ p {
   margin-left: 5%;
   margin-right: 5%;
   align-items: center;
-  font-size: 0.8vw;
+  font-size: calc(0.5vw + 10px);
 }
 
-
+.tutorial-navigation-mobile {
+  display: none;
+}
 .tutorials {
   width: 88%;
 }
 
 .tutorial-navigation {
-  width: 10%;
+
   margin-right: 2%;
   
 }
@@ -338,7 +340,7 @@ p {
   width: 100%;
   color: white;
   background-color: rgba(163, 54, 190, 0.792);
-  padding: 0.5vh 0px 0.5vh 0px;
+  padding: 0.5vh 0px 0.5vh 0.5px;
   border-radius: 3px;
 }
 
@@ -677,7 +679,7 @@ th.tutorial-list-table-element {
     font-size: 20px;
   }
 
-  .tutorials-frame.flex-container{
+  .tutorials-frame .flex-container{
     display: block;
   }
   .tutorial-navigation ol {
@@ -685,9 +687,24 @@ th.tutorial-list-table-element {
    
   }
   .tutorial-navigation {
-    margin: 0;
+    display: none;
+  }
+  .tutorial-navigation-mobile {
+    display: block;
     width: 100%;
-    margin-bottom: 20px;
+  }
+  .tutorial-navigation-mobile button {
+    display: block;
+    width: 70%;
+    color: white;
+    background-color: rgba(163, 54, 190, 0.792);
+    padding: 0.5vh 0px 0.5vh 0px;
+    border-radius: 3px;
+    
+  }
+
+  .tutorial-navigation-mobile ol {
+    list-style-type: none;
   }
   .tutorials {
     width: 100%;
