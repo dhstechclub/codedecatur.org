@@ -1,10 +1,10 @@
 ---
-date: "2020-07-21"
-title: "Minecraft OCR With PyTesseract"
-author: "Hayden Carpenter"
+title: Minecraft OCR With PyTesseract
+author: Hayden Carpenter
 language: python
 difficulty: 3
-description: "First step to automating Minecraft"
+description: First step to automating Minecraft
+date: July 28, 2020
 ---
 #What is PyTesseract and OCR?
 
