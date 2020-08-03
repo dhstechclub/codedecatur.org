@@ -21,7 +21,7 @@ let options = {
   };
 var customMarkdownIt = new markdownIt(options);
 
-var Tutorial = createClass({
+let Tutorial = createClass({
     render() {
       const entry = this.props.entry;
       const title = entry.getIn(["data", "title"], null);
@@ -42,3 +42,5 @@ var Tutorial = createClass({
   });
   
 CMS.registerPreviewTemplate('tutorial', Tutorial);
+
+export default Tutorial;
