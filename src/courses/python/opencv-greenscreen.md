@@ -1,11 +1,12 @@
 ---
-slug: "/tutorials/python/opencv-greenscreen"
-date: "2020-07-19"
-title: "Making a Greenscreen with OpenCV"
-author: "Carter Semrad"
+title: Making a Greenscreen with OpenCV
+author: Carter Semrad
 language: python
 difficulty: 2
-description: "Did you know that the Mandalorian doesn't use greenscreen for their backgrounds?"
+description: Did you know that the Mandalorian doesn't use greenscreen for their
+  backgrounds?
+date: December 18, 2019
+slug: /tutorials/python/opencv-greenscreen
 ---
 ![the greenscreen](../../images/opencv-greenscreen/example.png)
 
