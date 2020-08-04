@@ -19,7 +19,7 @@ const projects = [
     {"url": "", "name": "Celsior (.casm Emulator)", "author": "Colin Sandage", "redirect": false},
     {"url": "", "name": "ChASM (IDE and Compiler)", "author": "Colin Sandage", "redirect": false},
     {"url": "https://github.com/HSF-2003/Phalanx", "name": "Phalanx", "author": "Colin Sandage"},
-    
+    {"url": "https://github.com/MarkCangila/MnistPCAAutoEncoder", "name": "MNIST PCA Auto Encoder", "author": "Keon Sanavandi"},
 
 ]
 let authorSections = {}
