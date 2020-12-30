@@ -176,7 +176,7 @@ else:
 # The x=i, y=j in the lambda function is necessary because Python's variables are what's known as "late binding."
 # That is, the variables i and j remain variables within the command parameter until the for-loop finishes. Without the x=i, y=j, every button's command would append the last button's text attribute.
 ```
-Another function we need is the one to clear whatever's in the **output** widget. The clear button will use this function, and it's quite simple. So simple, in fact, you should try to make it yourself (though I've got code you can reference at the end of the article).
+Another function we need is the one to clear whatever's in the **output** widget. The clear button will use this function, and it's quite simple. So simple, in fact, you should try to make it yourself (though I've got code you can reference at the end of this article).
 
 Now to change the clear button's **command** value:
 
