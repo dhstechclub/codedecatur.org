@@ -3,7 +3,7 @@ title: Creating a Basic Calculator in Python with Tkinter
 author: Jackson Reynolds
 language: python
 difficulty: 2
-description: Learn the ways of this graphical user interface.
+description: Learn the ways of this graphical user interface
 date: December 30, 2020
 slug: ""
 ---
