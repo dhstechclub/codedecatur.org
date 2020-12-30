@@ -1,6 +1,5 @@
 backend:
   name: git-gateway
-  repo: codecatur-website/xhayden.github.io
   branch: master
   site_domain: codedecatur.org
 
