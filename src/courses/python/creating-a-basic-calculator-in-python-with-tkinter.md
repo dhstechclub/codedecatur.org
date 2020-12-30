@@ -4,245 +4,306 @@ author: Jackson Reynolds
 language: python
 difficulty: 2
 description: Learn the ways of this graphical user interface.
-date: August 11, 2020
+date: December 30, 2020
 slug: ""
 ---
 # Creating a Basic Calculator in Python with Tkinter
-In this tutorial, we'll be using a GUI with Python to create a calculator. That GUI will be Tkinter, the most commonly used GUI with Python. (I, for one, rely heavily on StackOverflow for lots of answers. And more users = more answers = good.) The calculator will be a simple 4-function calculator because I don't want to create five hundred buttons. And yes, it would be simpler to just type expressions into the Python shell to perform calculations, but simplicity is not our goal; rather, it is to learn a few of the many, many things that can be done with this simple yet effective graphical user interface.
+In this tutorial, we'll be using a GUI with Python to create a calculator. That GUI will be Tkinter, the most commonly used GUI with Python. (I, for one, rely heavily on StackOverflow for answers. More users = good.) The calculator will be a simple 4-function calculator because I don't want to create five hundred buttons. And yes, it would be simpler to just type expressions into the Python shell to perform calculations, but simplicity is not our goal; rather, it is to learn a few of the many, many things that can be accomplished with this simple yet effective graphical user interface.
 
 ## Step 1: Importing Tkinter and Making a Window
 ```python
-from tkinter import * # That was easy.
+from tkinter import *
 
 master = Tk()
-master.geometry('225x150') # Width: 225 pixels; Height: 150 pixels
+master.geometry('225x150') # Width: 225 pixels; height: 150 pixels
 
-mainloop() # Infinite loop. We want to constantly check for user input.
+mainloop() # Infinite loop. We'll want to constantly check for user input.
            # Be sure to keep mainloop() at the very end of your code.
 ```
-If you run this code, you should see a Tkinter window appear. But you can't really do much with it, it doesn't look calculator-ey, and it is clearly unable to calculate the product of six and nine. To fix this atrocity, let's add some buttons!
+If you run this code, you should see a Tkinter window appear. But it can't really do much, it doesn't look like a calculator, and it is clearly unable to calculate the product of six and nine.
 
-## Step 2: Adding Some Buttons
-I lied. When I said "some" buttons, I really meant "a lot of" buttons. After all, a calculator is nothing but buttons and a display screen. Even a basic calculator will need the following:
-- A display screen
-- Ten buttons for the digits 0-9
-- Another button for the decimal point - don't forget the decimal point
-- Four more buttons for adding, subtracting, multiplying, and dividing
-- A button for calculating what the user's typed in the calculator
-- And finally, a button to clear the display screen
+In order to rectify this situation, we need to:
+- Make buttons and put them in the right places to make the calculator look like a calculator
+- Map functions to these buttons so they'll do things when the user clicks on them
+- Make a special button that displays everything the user's entered (a display screen)
+- Create a text variable of some sort that we can modify and display on the display screen
+- I think that's it
 
-That's *eighteen widgets*. Programming eighteen widgets is not ideal. Then again, such an ideal world where all code is conveniently short and all cows are perfectly spherical simply doesn't exist. So we'll just have to take it one widget at a time.
+Let's start with the text variable. We'll need to reference and modify it all throughout our code, so it would be easiest to make a **Text** class and create an object of type **Text** that we can manipulate.
 
-Let's start with the display screen. This will be a simple ***Label*** widget that displays whatever text we need, but only on one line, which is fine for our purposes and many other purposes in Tkinter. Since it will contain ever-changing text, it's also time to declare a variable.
+## Step 2: Making a Text Class and Object
+This shouldn't be inordinately difficult.
 
 ```python
-displayedText = ''
+# Make the Text class
+class Text():
+    def __init__(self):
+        self.text = ''
+    def setText(self, text):
+        self.text = text
+    def getText(self):
+        return self.text
+
+# Create a Text object that can be referenced everywhere in the code
+txt = Text()
+```
+And it wasn't. Good.
+
+Having this **txt** object will be really helpful once we need to reference it fifty billion times.
+
+But that'll come later. Right now it's time to add some buttons!
+
+## Step 3: Adding Some Buttons
+I lied. When I said "some" buttons, I really meant "a lot of" buttons. After all, a calculator is nothing but buttons and a display screen. Even a basic calculator will need:
+- A display screen
+- Ten buttons for the digits 0-9
+- Another button for the decimal point — don't forget the decimal point
+- Four more buttons for adding, subtracting, multiplying, and dividing
+- A button for calculating what the user's entered in the calculator
+- And finally, a button to clear the display screen
+
+That's a lot of widgets. Luckily, we can create most of these with some for-loops. (I'll come back to those.)
+
+Let's start with the display screen. It's going to incessantly display whatever the user's entered.
+
+This will be a simple **Label** widget that displays whatever text we need, but only on one line, which is fine for our purposes and many other purposes in Tkinter.
+
+```python
 output = Label(master, text = '0')
 # Most basic calcs make 0 their default "nothing entered yet" screen.
-# Also, displayedText will change according to user input.
-# Then output's text will be changed to displayedText.
-# I'll get to all of that later.
 ```
 We've created the label widget, but it's not showing up! The reason for this is simple: we haven't added it to our window yet.
 
-There are many different ways to add widgets to a window, but the easiest is definitely the **grid()** method. This method allows you to choose where a widget will go by manipulating its *column* and *row* values, and it also lets you choose how many columns and rows it will take up by manipulating its *columnspan* and *rowspan* values. Oh, a quick note: in Tkinter and all things programming, it's important to remember two things:
+There are many different ways to add widgets to a window, but the easiest is definitely the **grid()** method. This method allows you to choose where a widget will go by changing its **column** and **row** values, and it also lets you choose how many columns and rows it will take up by changing its **columnspan** and **rowspan** values.
 
-1. Counting starts at 0.
-2. The point (0, 0) is at the top-left of the screen. Not the bottom-left.
+A quick note: in Tkinter and all things programming, it's important to remember that the point (0, 0) is at the top-left of the screen, not the bottom-left.
 
-Therefore, to make a label widget at the top-left of the screen, write the following:
+To make a label widget at the top-left of the screen, we simply write:
 
 ```python
 output.grid(column = 0, row = 0, columnspan = 5, rowspan = 1)
 ```
-But I don't want to write this *eighteen times*. Let's make a quick function to simplify things a little.
+But that looks kind of clunky. I don't want to write all that whenever I create a widget. I suggest you write a quick function to make your life easier.
 
 ```python
-def Grid(Thing, Column, Row, Columnspan, Rowspan):
-    Thing.grid(column = Column, row = Row, columnspan = Columnspan, rowspan = Rowspan)
+def Grid(self, Column, Row, Columnspan, Rowspan):
+    self.grid(column = Column, row = Row, columnspan = Columnspan, rowspan = Rowspan)
 ```
 Now we can instead just write:
 
 ```python
 Grid(output, 0, 0, 5, 1)
 ```
-If you run this code and give *displayedText* some value, you should see it show up in your window. Though you should keep *displayedText* empty for now. Meanwhile, it's time to add a button.
+If you run this code, you should see a **Label** widget show up in your window with a zero inside it.
 
-Going left to right, top to bottom, after adding the display screen, the upcoming buttons to add for the second row (row = 1) are:
-- The seven button
-- The eight button
-- The nine button
-- The plus sign button
+Meanwhile, it's time to add some actual buttons. Lots of actual buttons, in fact.
 
-I'll not be writing out code for all eighteen widgets here. You'll be able to figure out the rest. (Hint: all columnspan and rowspan values should be 1 from now on.) Anyway, on to the ***Button*** widget. First, the seven button.
+There are many good ways to do this. By hand is not one of them. For-loops are much less painful.
+
+We can create a two-dimensional array of values that two nested for-loops can deal with. It should look something like this:
 
 ```python
-sevenButton = Button(master, text = '7', command = )
-Grid(sevenButton, 0, 1, 1, 1)
+numberPad = [
+    ['7', '8', '9', '+'],
+    ['4', '5', '6', '-'],
+    ['1', '2', '3', '*'],
+    ['0', '.', '=', '/', 'Clear'] ]
 ```
-The *command* value determines what function to run whenever that button is clicked. As we've got no useful functions at the moment, I've left it blank for now, but I'll get back to it.
+You can probably tell that each array within the big one will be its own row.
 
-Okay, map out all the buttons where they should be on the grid, and then check back here. (You can refer back to the list of buttons at the beginning of Step 2.) To see if they're going where you want them to, and to be able to run your program, you can create a temporary function and assign its name to *command* like so:
+On to the for-loops.
 
 ```python
-def doNothing():
-    # It doesn't do anything...
+for i in range(len(numberPad)):
+    buttonList.append([])
+    
+    for j in range(len(numberPad[i])):
+        buttonList[i].append(Button(master, text = numberPad[i][j]))
+        Grid(buttonList[i][j], j, i + 1, 1, 1) # i + 1 b/c of output widget
 
-sevenButton = Button(master, text = '7', command = doNothing)
-Grid(sevenButton, 0, 1, 1, 1)
-# Notice the lack of a parentheses pair after the function. ^
+        if numberPad[i][j] == '=':
+            # Code to assign the equals button a command to evaluate txt (written in Step 4)
+        elif numberPad[i][j] == 'Clear':
+            # Assign the clear button a command to reset the display screen (and the txt object)
+        else:
+            # Assign all other buttons a command to append their value to txt
 ```
-## Step 3: Creating the Functions
-You're back? Great, now it's time to create the functions we need. These functions will interact with the calculator and let it actually perform calculations.
+This for-loop creates a two-dimensional array of **Button** widgets that we can manipulate as we iterate through all the values in **numberPad**.
 
-The very first of the relatively few functions we need is a simple one. To make the code easier to understand while and after the coding process, we can make a quick function that updates the value that's displayed in our *output* widget, as we'll need it a couple of times very soon:
+You can probably tell that some stuff is missing. We still need to map the buttons in the for-loops to certain functions so that they can do stuff when they're clicked on.
+
+In order to map functions to buttons, however, we have to first create some functions.
+
+## Step 4: Creating the Functions
+Now it's time to create the functions we need. Whenever we click on a button, it'll call one of these functions.
+
+All that code we wrote earlier was just building up to this. With the framework in place, we are finally able to give our calculator some instructions, tell it what to do.
+
+The very first of the relatively few functions we need is a simple one. To make the code simpler and easier to read during and after the coding process, we can make a quick function that updates the value that's displayed in our **output** widget, as we'll need to call it quite often:
 
 ```python
-def updateValue():
-    output.config(text = str(displayedText))
-      # Making displayedText a string just in case.
-      # It'll go through a lot of math, and I want it to remain a string when displayed because I hate getting errors too.
+def updateValue(value):
+    output.config(text = value)
 ```
-We also want to put values into *displayedText* that correspond to the digits and mathematical symbols the user clicks on. To do that, we'll need to create another function:
+We also want to append to **txt** whatever digits and mathematical symbols the user clicks on. To do that, we'll need to create another function:
 
 ```python
 def append(value):
-    global displayedText
-    displayedText += value
-    updateValue()
+    txt.setText(txt.getText() + value)
+    updateValue(txt.getText())
 ```
-Now we can change the function assigned to *command* in all of the buttons except for the equal sign and the clear button. Here's what that would look like for the plus button:
+Let's go back to the section of our for-loops that deals with most of the buttons.
 
 ```python
-plusButton = Button(master, text = '+', command = lambda : append('+'))
-# Notice the "lambda : " right after "command = ".
-# This lets you put parameters into the function, in this case a plus sign.
+else:
+    # Assign all other buttons a command to append their value to txt
 ```
+We can replace this pseudocode with actual code. Tkinter's widgets all have a **config()** method, and the Button's **config()** method comes with a **command** parameter.
 
-Another function we need is the one to clear whatever's in the *output* widget. This is the one that the clear button will use, and it's quite simple:
+This parameter does exactly what we need to do: it assigns the button a function to call whenever it's clicked.
 
 ```python
-def clearText():
-    global displayedText
-    displayedText = '' # Get rid of whatever was in displayedText.
-    output.config(text = '0')
-    # Reset text in output.
-```
+else:
+    buttonList[i][j].config(command = lambda x=i, y=j : append(buttonList[x][y]['text']))
+    # ['text'] returns the widget's text attribute
+    # I could've used numberPad[x][y], but I wanted to use as much Tkinter syntax as possible
 
-Once you've changed the clear button's *command* value, the last two things to do are to create the function that calculates the user's input and to make the equal sign's *command* call that function:
+'''
+Notice the lambda function.
+Tkinter doesn't like when you map commands that take arguments to buttons. The lambda function is a workaround.
+
+Lambda functions are pretty cool. If you've never seen one before, you should definitely look into them.
+
+
+The x=i, y=j in the lambda function is necessary because Python's variables are what's known as "late binding."
+
+That is, the variables i and j remain variables within the command parameter until the for-loop finishes. Without the x=i, y=j, every button's command would append the last button's text attribute.
+'''
+```
+Another function we need is the one to clear whatever's in the **output** widget. The clear button will use this function, and it's quite simple. So simple, in fact, you should try to make it yourself (though I've got code you can reference at the end of the article).
+
+Now to change the clear button's **command** value:
 
 ```python
-def evaluate():
-    global displayedText
-    displayedText = str(float(eval(displayedText)))
-    # All the calculating is done in the eval function.
-    if float(displayedText) == round(float(displayedText)):
-    # If the float's an integer
-        displayedText = str(round(float(displayedText)))
-        # Chop off the ".0" at the end
-    updateValue()
+elif numberPad[i][j] == 'Clear':
+    buttonList[i][j].config(command = clearText)
 
-equalsButton = Button(master, text = '=', command = evaluate)
+# Notice there's no pair of parentheses after clearText
+# That's because clearText doesn't take any arguments
 ```
+The last two things to do are to create the function that calculates the user's input and to make the equal sign's **command** attribute evaluate the user input and display the result.
+
+This evaluation function is a little more complicated than its predecessors. Evaluating a String is easy — we can just use Python's built-in **eval()** function. What makes this function more complicated is the fact that it has to account for when the user makes a mistake such as, for example, clicking on the times button thrice in a row.
+
+If the user's done something like that and then clicks the equal sign, Python will throw an exception saying something like, "Error: User is too dumb to operate a calculator."
+
+Okay, Python might sugarcoat it a little. In either case, we should use a try/except statement to avoid getting any errors.
+
+```python
+def evaluate(expression):
+    value = ''
+    try:
+        value = eval(expression)
+        if value == round(value): # If the float's an integer
+            value = round(value)  # Chop off the ".0" at the end
+        value = str(value)
+        txt.setText(value)
+    except:
+        value = 'Error'
+        txt.setText('')
+    return value
+```
+The calculator code is almost finished! All that's left is to edit the equal sign's **command** attribute. (You can do this last part, I bet.)
+
+But wait! There's another button that might come in handy. If the user's entered lots of stuff in the calculator and suddenly misclicks, it would be nice if they could click on a backspace button that deletes only the last character in **txt**. (I'm including this code as well, though you should definitely try to code it yourself.)
+
 ## The Complete Code
-That was a lot of code for just a little calculator. I've got over eighty lines of code here, which you can refer to whenever necessary.
+That was a lot of code for just a little calculator. I've got about sixty lines of code here, excluding comments and whitespace, which you can refer to as needed.
 
-If you run your code and click on the buttons, you should see something pop up that looks like a calculator and calculates like a calculator. You've made a calculator! And you've also tapped into the power of this simple yet capable graphical user interface along the way.
+If you run your program and click on some buttons, you should see something pop up that looks like a calculator and calculates like a calculator. You've made a calculator! And you've also tapped into the power of this simple yet capable graphical user interface along the way.
 
 ```python
-# A basic and functioning calculator using Tkinter in Python.
+# A basic and functioning calculator using Tkinter in Python
 from tkinter import *
 
 master = Tk()
 master.geometry('225x150')
 
-def Grid(Thing, Column, Row, Columnspan, Rowspan):
-    # A function I made that lets me write less code.
-    Thing.grid(column = Column, row = Row, columnspan = Columnspan, rowspan = Rowspan)
+# Make a Text class for the text that will be displayed
+class Text():
+    def __init__(self):
+        self.text = ''
+    def setText(self, text):
+        self.text = text
+    def getText(self):
+        return self.text
 
-displayedText = ''
+# Also make a Text object
+txt = Text()
 
-output = Label(master, text = '0')
-# Most calcs make 0 their default "nothing entered yet" screen.
-# Displays 0 at beginning of program.
+# Here's a function I made that lets me write less code
+def Grid(self, Column, Row, Columnspan, Rowspan):
+    self.grid(column = Column, row = Row, columnspan = Columnspan, rowspan = Rowspan)
+
+output = Label(master, text = '0') # Most calcs make 0 their default "nothing entered yet" screen. Display at beginning of program.
 Grid(output, 0, 0, 5, 1)
 
-def updateValue():
-    output.config(text = str(displayedText))
+def updateValue(value):
+    output.config(text = value)
 
 def append(value):
-    global displayedText
-    displayedText += value
-    updateValue()
+    txt.setText(txt.getText() + value)
+    updateValue(txt.getText())
+
+def backspace():
+    txt.setText(txt.getText()[:len(txt.getText()) - 1])
+    if len(txt.getText()) == 0:
+        updateValue('0')
+    else:
+        updateValue(txt.getText())
 
 def clearText():
-    global displayedText
-    displayedText = '' # Get rid of whatever was in displayedText.
-    output.config(text = '0') # Reset text in output.
+    txt.setText('') # Get rid of whatever was in txt
+    updateValue('0') # Reset text in output
 
-def evaluate():
-    global displayedText
-    displayedText = str(float(eval(displayedText)))
-    if float(displayedText) == round(float(displayedText)):
-    # If the float's an integer
-        displayedText = str(round(float(displayedText))) 
-        # Chop off the ".0" at the end
-    updateValue()
+def evaluate(expression):
+    value = ''
+    try:
+        value = eval(expression)
+        if value == round(value): # If the float's an integer
+            value = round(value)  # Chop off the ".0" at the end
+        value = str(value)
+        txt.setText(value)
+    except:
+        value = 'Error'
+        txt.setText('')
+    return value
 
-# HERE THERE BE BUTTONS.
-# In order, left to right, top to bottom.
+# Make all the buttons
+numberPad = [
+    ['7', '8', '9', '+'],
+    ['4', '5', '6', '-'],
+    ['1', '2', '3', '*', '<—'],
+    ['0', '.', '=', '/', 'Clear'] ]
 
-sevenButton = Button(master, text = '7', command = lambda : append('7'))
-Grid(sevenButton, 0, 1, 1, 1)
+# With nested for-loops
+buttonList = []
 
-eightButton = Button(master, text = '8', command = lambda : append('8'))
-Grid(eightButton, 1, 1, 1, 1)
+for i in range(len(numberPad)):
+    buttonList.append([])
+    
+    for j in range(len(numberPad[i])):
+        buttonList[i].append(Button(master, text = numberPad[i][j]))
+        Grid(buttonList[i][j], j, i + 1, 1, 1)
 
-nineButton = Button(master, text = '9', command = lambda : append('9'))
-Grid(nineButton, 2, 1, 1, 1)
+        if numberPad[i][j] == '=':
+            buttonList[i][j].config(command = lambda : updateValue(evaluate(txt.getText())))
+        elif numberPad[i][j] == '<—':
+            buttonList[i][j].config(command = backspace)
+        elif numberPad[i][j] == 'Clear':
+            buttonList[i][j].config(command = clearText)
+        else:
+            buttonList[i][j].config(command = lambda x=i, y=j : append(buttonList[x][y]['text'])) # ['text'] returns the widget's text attribute
 
-plusButton = Button(master, text = '+', command = lambda : append('+'))
-Grid(plusButton, 3, 1, 1, 1)
-
-fourButton = Button(master, text = '4', command = lambda : append('4'))
-Grid(fourButton, 0, 2, 1, 1)
-
-fiveButton = Button(master, text = '5', command = lambda : append('5'))
-Grid(fiveButton, 1, 2, 1, 1)
-
-sixButton = Button(master, text = '6', command = lambda : append('6'))
-Grid(sixButton, 2, 2, 1, 1)
-
-minusButton = Button(master, text = '-', command = lambda : append('-'))
-Grid(minusButton, 3, 2, 1, 1)
-
-oneButton = Button(master, text = '1', command = lambda : append('1'))
-Grid(oneButton, 0, 3, 1, 1)
-
-twoButton = Button(master, text = '2', command = lambda : append('2'))
-Grid(twoButton, 1, 3, 1, 1)
-
-threeButton = Button(master, text = '3', command = lambda : append('3'))
-Grid(threeButton, 2, 3, 1, 1)
-
-multiplyButton = Button(master, text = '*', command = lambda : append('*'))
-Grid(multiplyButton, 3, 3, 1, 1)
-
-zeroButton = Button(master, text = '0', command = lambda : append('0'))
-Grid(zeroButton, 0, 4, 1, 1)
-
-decimalButton = Button(master, text = '.', command = lambda : append('.'))
-Grid(decimalButton, 1, 4, 1, 1)
-
-equalsButton = Button(master, text = '=', command = evaluate)
-Grid(equalsButton, 2, 4, 1, 1)
-
-divideButton = Button(master, text = '/', command = lambda : append('/'))
-Grid(divideButton, 3, 4, 1, 1)
-
-clearButton = Button(master, text = 'Clear', command = clearText)
-Grid(clearButton, 4, 4, 1, 1)
-
-mainloop() # Repeat forever...watching...waiting...for user input.
-
+mainloop()
 ```
