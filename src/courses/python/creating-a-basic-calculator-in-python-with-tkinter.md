@@ -10,6 +10,7 @@ slug: ""
 In this tutorial, we'll be using a GUI with Python to create a calculator. That GUI will be Tkinter, the most commonly used GUI with Python. (I, for one, rely heavily on StackOverflow for answers. More users = good.) The calculator will be a simple 4-function calculator because I don't want to create five hundred buttons. And yes, it would be simpler to just type expressions into the Python shell to perform calculations, but simplicity is not our goal; rather, it is to learn a few of the many, many things that can be accomplished with this simple yet effective graphical user interface.
 
 ## Step 1: Importing Tkinter and Making a Window
+
 ```python
 from tkinter import *
 
@@ -19,18 +20,21 @@ master.geometry('225x150') # Width: 225 pixels; height: 150 pixels
 mainloop() # Infinite loop. We'll want to constantly check for user input.
            # Be sure to keep mainloop() at the very end of your code.
 ```
+
 If you run this code, you should see a Tkinter window appear. But it can't really do much, it doesn't look like a calculator, and it is clearly unable to calculate the product of six and nine.
 
 In order to rectify this situation, we need to:
-- Make buttons and put them in the right places to make the calculator look like a calculator
-- Map functions to these buttons so they'll do things when the user clicks on them
-- Make a special button that displays everything the user's entered (a display screen)
-- Create a text variable of some sort that we can modify and display on the display screen
-- I think that's it
+
+* Make buttons and put them in the right places to make the calculator look like a calculator
+* Map functions to these buttons so they'll do things when the user clicks on them
+* Make a special button that displays everything the user's entered (a display screen)
+* Create a text variable of some sort that we can modify and display on the display screen
+* I think that's it
 
 Let's start with the text variable. We'll need to reference and modify it all throughout our code, so it would be easiest to make a **Text** class and create an object of type **Text** that we can manipulate.
 
 ## Step 2: Making a Text Class and Object
+
 This shouldn't be inordinately difficult.
 
 ```python
@@ -46,6 +50,7 @@ class Text():
 # Create a Text object that can be referenced everywhere in the code
 txt = Text()
 ```
+
 And it wasn't. Good.
 
 Having this **txt** object will be really helpful once we need to reference it fifty billion times.
@@ -53,13 +58,15 @@ Having this **txt** object will be really helpful once we need to reference it f
 But that'll come later. Right now it's time to add some buttons!
 
 ## Step 3: Adding Some Buttons
+
 I lied. When I said "some" buttons, I really meant "a lot of" buttons. After all, a calculator is nothing but buttons and a display screen. Even a basic calculator will need:
-- A display screen
-- Ten buttons for the digits 0-9
-- Another button for the decimal point — don't forget the decimal point
-- Four more buttons for adding, subtracting, multiplying, and dividing
-- A button for calculating what the user's entered in the calculator
-- And finally, a button to clear the display screen
+
+* A display screen
+* Ten buttons for the digits 0-9
+* Another button for the decimal point — don't forget the decimal point
+* Four more buttons for adding, subtracting, multiplying, and dividing
+* A button for calculating what the user's entered in the calculator
+* And finally, a button to clear the display screen
 
 That's a lot of widgets. Luckily, we can create most of these with some for-loops. (I'll come back to those.)
 
@@ -71,6 +78,7 @@ This will be a simple **Label** widget that displays whatever text we need, but 
 output = Label(master, text = '0')
 # Most basic calcs make 0 their default "nothing entered yet" screen.
 ```
+
 We've created the label widget, but it's not showing up! The reason for this is simple: we haven't added it to our window yet.
 
 There are many different ways to add widgets to a window, but the easiest is definitely the **grid()** method. This method allows you to choose where a widget will go by changing its **column** and **row** values, and it also lets you choose how many columns and rows it will take up by changing its **columnspan** and **rowspan** values.
@@ -82,17 +90,20 @@ To make a label widget at the top-left of the screen, we simply write:
 ```python
 output.grid(column = 0, row = 0, columnspan = 5, rowspan = 1)
 ```
+
 But that looks kind of clunky. I don't want to write all that whenever I create a widget. I suggest you write a quick function to make your life easier.
 
 ```python
 def Grid(self, Column, Row, Columnspan, Rowspan):
     self.grid(column = Column, row = Row, columnspan = Columnspan, rowspan = Rowspan)
 ```
+
 Now we can instead just write:
 
 ```python
 Grid(output, 0, 0, 5, 1)
 ```
+
 If you run this code, you should see a **Label** widget show up in your window with a zero inside it.
 
 Meanwhile, it's time to add some actual buttons. Lots of actual buttons, in fact.
@@ -108,11 +119,14 @@ numberPad = [
     ['1', '2', '3', '*'],
     ['0', '.', '=', '/', 'Clear'] ]
 ```
+
 You can probably tell that each array within the big one will be its own row.
 
 On to the for-loops.
 
 ```python
+buttonList = []
+
 for i in range(len(numberPad)):
     buttonList.append([])
     
@@ -127,6 +141,7 @@ for i in range(len(numberPad)):
         else:
             # Assign all other buttons a command to append their value to txt
 ```
+
 This for-loop creates a two-dimensional array of **Button** widgets that we can manipulate as we iterate through all the values in **numberPad**.
 
 You can probably tell that some stuff is missing. We still need to map the buttons in the for-loops to certain functions so that they can do stuff when they're clicked on.
@@ -134,6 +149,7 @@ You can probably tell that some stuff is missing. We still need to map the butto
 In order to map functions to buttons, however, we have to first create some functions.
 
 ## Step 4: Creating the Functions
+
 Now it's time to create the functions we need. Whenever we click on a button, it'll call one of these functions.
 
 All that code we wrote earlier was just building up to this. With the framework in place, we are finally able to give our calculator some instructions, tell it what to do.
@@ -144,6 +160,7 @@ The very first of the relatively few functions we need is a simple one. To make 
 def updateValue(value):
     output.config(text = value)
 ```
+
 We also want to append to **txt** whatever digits and mathematical symbols the user clicks on. To do that, we'll need to create another function:
 
 ```python
@@ -151,12 +168,14 @@ def append(value):
     txt.setText(txt.getText() + value)
     updateValue(txt.getText())
 ```
+
 Let's go back to the section of our for-loops that deals with most of the buttons.
 
 ```python
 else:
     # Assign all other buttons a command to append their value to txt
 ```
+
 We can replace this pseudocode with actual code. Tkinter's widgets all have a **config()** method, and the Button's **config()** method comes with a **command** parameter.
 
 This parameter does exactly what we need to do: it assigns the button a function to call whenever it's clicked.
@@ -172,9 +191,11 @@ else:
 
 # Lambda functions are pretty cool. If you've never seen one before, you should definitely look into them.
 
-# The x=i, y=j in the lambda function is necessary because Python's variables are what's known as "late binding."
+# The x=i, y=j in the lambda function is necessary because Python's variables are what's known as "late binding."
+
 # That is, the variables i and j remain variables within the command parameter until the for-loop finishes. Without the x=i, y=j, every button's command would append the last button's text attribute.
 ```
+
 Another function we need is the one to clear whatever's in the **output** widget. The clear button will use this function, and it's quite simple. So simple, in fact, you should try to make it yourself (though I've got code you can reference at the end of this article).
 
 Now to change the clear button's **command** value:
@@ -186,6 +207,7 @@ elif numberPad[i][j] == 'Clear':
 # Notice there's no pair of parentheses after clearText
 # That's because clearText doesn't take any arguments
 ```
+
 The last two things to do are to create the function that calculates the user's input and to make the equal sign's **command** attribute evaluate the user input and display the result.
 
 This evaluation function is a little more complicated than its predecessors. Evaluating a String is easy — we can just use Python's built-in **eval()** function. What makes this function more complicated is the fact that it has to account for when the user makes a mistake such as, for example, clicking on the times button thrice in a row.
@@ -208,11 +230,13 @@ def evaluate(expression):
         txt.setText('')
     return value
 ```
+
 The calculator code is almost finished! All that's left is to edit the equal sign's **command** attribute. (You can do this last part, I bet.)
 
 But wait! There's another button that might come in handy. If the user's entered lots of stuff in the calculator and suddenly misclicks, it would be nice if they could click on a backspace button that deletes only the last character in **txt**. (I'm including this code as well, though you should definitely try to code it yourself.)
 
 ## The Complete Code
+
 That was a lot of code for just a little calculator. I've got about sixty lines of code here, excluding comments and whitespace, which you can refer to as needed.
 
 If you run your program and click on some buttons, you should see something pop up that looks like a calculator and calculates like a calculator. You've made a calculator! And you've also tapped into the power of this simple yet capable graphical user interface along the way.
