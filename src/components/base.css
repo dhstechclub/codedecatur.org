@@ -515,7 +515,6 @@ th.tutorial-list-table-element {
 
 .markdown-preview {
   margin-bottom: 20px;
-  background-color: rgba(219, 219, 219, 0.233);
 }
 
 .preview-image {
@@ -662,7 +661,7 @@ th.tutorial-list-table-element {
     font-size: 35px;
   }
   .media-container {
-    padding-top: 20px;
+    padding-top: 2px;
     font-size: 15px;
     margin-left: 5%;
     margin-right: 5%;

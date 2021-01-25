@@ -45,7 +45,7 @@ const LanguageCheckbox = (props) => {
 
 
 const NewTutorialPage = () => {
-    const [languages, setLanguages] = useState({"javascript": true, "python": true, "java": true, "csharp": true, "cplusplus": true, "arduino": true});
+    const [languages, setLanguages] = useState({"javascript": true, "python": true, "java": true, "csharp": true, "cplusplus": true, "arduino": true, "go": true, "other": true});
 
     return <Layout>
     <SEO title="Tutorials" />
@@ -57,7 +57,9 @@ const NewTutorialPage = () => {
             <LanguageCheckbox langs={languages} setlangs={setLanguages} language="java"/>
             <LanguageCheckbox langs={languages} setlangs={setLanguages} language="csharp"/>
             <LanguageCheckbox langs={languages} setlangs={setLanguages} language="cplusplus"/>
-            <LanguageCheckbox langs={languages} setlangs={setLanguages} language="arduino/"/>
+            <LanguageCheckbox langs={languages} setlangs={setLanguages} language="arduino"/>
+            <LanguageCheckbox langs={languages} setlangs={setLanguages} language="go"/>
+            <LanguageCheckbox langs={languages} setlangs={setLanguages} language="other"/>
         </div>
         <table>
             <StaticQuery query={graphql`  
