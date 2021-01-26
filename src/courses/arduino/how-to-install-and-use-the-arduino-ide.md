@@ -19,8 +19,6 @@ Before you continue reading this tutorial, it is important to note that you will
 
 If you're not sure if you want to commit to learning Arduino, just buy the Arduino only, but if you want to experiment, and make your own things after you understand the basics, I recommend getting the kit. You should also note that the Arduino is severely limited without components, so it is advisable to get at least something basic, like LEDs. From this point, I'll assume you have an Arduino.  
 
-
-
 # Downloading the IDE
 
 Now you have an Arduino, let's download the IDE, so go to <https://www.arduino.cc/en/software> and download the one that is for your operating system. There is also an online version, but I would recommend just downloading the IDE.
@@ -46,9 +44,7 @@ void loop() {
 }
 ```
 
-This will print "Hello, World!" into the serial monitor every second. What is the serial monitor, and how do you access it? I'm glad you asked, but first, let's upload the code.
-
-
+In the setup function we put code we only need to run once, this usually entails things like setting the pins for various components, starting serial communication(like we do here), and setting up other things. This code will print "Hello, World!" into the serial monitor every second. What is the serial monitor, and how do you access it? I'm glad you asked, but first, let's upload the code.
 
 # Uploading the Code
 
