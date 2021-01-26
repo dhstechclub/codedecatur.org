@@ -50,11 +50,9 @@ Now you can turn an LED on, and off, so you can do whatever you want with it! Th
 
 * A dimming, and brightening script
 * A blink a certain number of times script
-* A morse code script
+* Turn on and off with your computer script
 
 But, that is as much knowledge as you need to be able to make the LED blink.
-
-
 
 # Brighten, and Dim
 
@@ -82,8 +80,6 @@ void loop() {
 ```
 
 You might be able to see how you could use this kind of code, along with multiple LEDs, to make customizable LED strips.
-
-
 
 # Blink Number of Times
 
@@ -115,6 +111,36 @@ void loop() {
 
 
 
-# Morse code
+# Turn on and off with your computer
 
-This one is a little more complex and requires a little more work. If you don't know morse code is a series of blinks and dashes that make letters. Now, unfortunately, dictionaries technically exist in Arduino, but they are really annoying to work with so we won't be using them for this, even though they would likely be quite useful. So, instead, we'll use something similar, a 2D array with the first term of each 2D array is the letter it will represent. Just kidding, you can't do that either, because Arduino is statically typed which for our purposes means you can't have different data types stored in the same array. What we will actually do is have one array will our letters, in alphabetical order, and another with our functions
+This one isn't that hard either, but it does require some new commands. We've used Serial.write() before to read to the Serial monitor, but we can also type into the serial monitor, then use Serial.read() to get that data. The only issue with this is that Serial.read returns an integer based on the ascii value of the character, so we'll only use numbers when telling it what to do.
+
+```cpp
+const int ledPin = 11;
+int command;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if(Serial.available() > 0){
+    command = Serial.read();
+
+    if(command == 49){ // if you type 1, turn LED on
+      digitalWrite(ledPin, HIGH);
+    }
+    if(command == 48){ // if you type 0, turn LED off
+      digitalWrite(ledPin, LOW);
+    }
+  }
+}
+
+```
+
+Now, go into the Serial monitor, and at the top of the window where you can type, type a 1 then press enter to turn the LED on, or type a 0 then press enter to turn the LED off.
+
+![](how-to-make-an-led-blink-with-arduino/capture-1.png)
