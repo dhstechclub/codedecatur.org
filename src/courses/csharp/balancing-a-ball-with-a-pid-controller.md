@@ -2,7 +2,7 @@
 title: Balancing a ball with a PID controller
 author: Theo Gillespie
 language: csharp
-difficulty: 2
+difficulty: 4
 description: Create a PID controller in Unity
 date: January 27, 2021
 draft: false
