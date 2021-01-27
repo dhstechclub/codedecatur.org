@@ -112,6 +112,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
 
     blogResult.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      let slugString;
+      if(node.frontmatter.slug == undefined || node.frontmatter.slug == ""){
+        slugString = `/blog/${node.frontmatter.title}`;
+        slugString = slugString.replace(/\s/g, '-').toLowerCase();
+        slugString = encodeURI(slugString);
+      }
+      else {
+        slugString = node.frontmatter.slug;
+      }
       createPage({
         path: node.frontmatter.slug,
         component: blogTemplate,
