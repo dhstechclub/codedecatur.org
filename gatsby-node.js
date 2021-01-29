@@ -113,6 +113,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     blogResult.data.allMarkdownRemark.edges.forEach(({ node }) => {
       let slugString;
+      console.log(node)
       if(node.frontmatter.slug == undefined || node.frontmatter.slug == ""){
         slugString = `/blog/${node.frontmatter.title}`;
         slugString = slugString.replace(/\s/g, '-').toLowerCase();
@@ -122,11 +123,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         slugString = node.frontmatter.slug;
       }
       createPage({
-        path: node.frontmatter.slug,
+        path: slugString,
         component: blogTemplate,
         context: {
           // additional data can be passed via context
-          slug: node.frontmatter.slug,
+          slug: slugString,
         },
       })
     })
