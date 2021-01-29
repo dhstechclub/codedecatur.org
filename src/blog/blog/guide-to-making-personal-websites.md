@@ -2,8 +2,9 @@
 title: Guide to Making Personal Websites
 author: Hayden Carpenter
 featuredImage: smaller.png
-date: 2021-01-26T18:58:43.464Z
+date: "2021-07-18"
 draft: true
+slug: "/guide-to-making-personal-websites/"
 ---
 Personal websites are a great way to not only establish yourself on the internet but also to showcase whatever projects you're working on. They're great for portfolios, resumes, tools, and more. The sky's the limit.
 

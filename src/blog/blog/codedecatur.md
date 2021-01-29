@@ -3,7 +3,7 @@ slug: "/blog/code-decatur-reborn"
 date: "2020-07-18"
 title: "Hello, Code Decatur."
 author: "Hayden Carpenter"
-featuredImage: "../images/codecatur.png"
+featuredImage: "../../images/codecatur.png"
 ---
 
 #Cybersecurity Club has been reborn as Code Decatur
