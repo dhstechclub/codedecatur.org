@@ -13,7 +13,7 @@ Many people turn to website creators like Wix or Squarespace to accomplish this.
 * They aren't very customizable.
 * They aren't unique.
 * They have limited script capabilities.
-  This makes them good for places to quickly put information to showcase to the internet, but makes it bad for showing off yourself and your coding abilities. 
+  This makes them good for places to quickly put information to showcase to the internet but makes it bad for showing off yourself and your coding abilities. 
 
 In my opinion, if you can code, you should try to make your website without using a builder.
 
@@ -25,11 +25,11 @@ So how would you go about that?
 
 Example configuration in a GitHub repository's settings:
 
-![Github pages configuration](ghpages.png "Example configuration in a GitHub repository's settings")
+![GitHub pages configuration](ghpages.png "Example configuration in a GitHub repository's settings")
 
 As you can see, you can also host GitHub Pages sites from your own domain.
 
-I personally use it to host many projects and demos that only require showing off javascript and css. This is where the service really shines, as its as simple to set up as changing a setting in the GitHub repository that stores the files. 
+I personally use it to host many projects and demos that only require showing off Javascript and CSS. This is where the service really shines, as it's as simple to set up as changing a setting in the GitHub repository that stores the files. 
 
 # Web Frameworks
 
@@ -37,13 +37,13 @@ Web frameworks are essentially foundational code you can use to create websites 
 
 Without web frameworks, creating websites would take upwards of thousands of hours longer to create.
 
-That being said, not all websites require a web framework. If you're hosting web content that's simple and unchanging, it's not necessary. You can just write raw html, javascript, and css and push it to something like Github Pages, or use a website builder. However, if you're doing anything complex, a web framework can save you time.
+That being said, not all websites require a web framework. If you're hosting web content that's simple and unchanging, it's not necessary. You can just write raw HTML, Javascript, and CSS and push it to something like Github Pages, or use a website builder. However, if you're doing anything complex, a web framework can save you time.
 
 Other benefits of web frameworks:
 
 * Well-organized from the get-go
 * Keeps flexibility and customizability 
-* Many security problems are fixed due to web frameworks largely being open sourced.
+* Many security problems are fixed due to web frameworks largely being open-sourced.
 * Well supported
 * Well documented
 * Easy setup
