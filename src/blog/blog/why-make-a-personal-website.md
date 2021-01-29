@@ -27,7 +27,7 @@ Example configuration in a GitHub repository's settings:
 
 ![Github pages configuration](ghpages.png "Example configuration in a GitHub repository's settings")
 
-As you can see, you can also host GitHub Pages sites from your own url.
+As you can see, you can also host GitHub Pages sites from your own domain.
 
 I personally use it to host many projects and demos that only require showing off javascript and css. This is where the service really shines, as its as simple to set up as changing a setting in the GitHub repository that stores the files. 
 
