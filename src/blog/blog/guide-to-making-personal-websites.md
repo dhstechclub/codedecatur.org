@@ -2,7 +2,7 @@
 title: Guide to Making Personal Websites
 author: Hayden Carpenter
 featuredImage: smaller.png
-date: "December 26, 2021"
+date: "January 26, 2021"
 draft: true
 slug: "/guide-to-making-personal-websites/"
 ---

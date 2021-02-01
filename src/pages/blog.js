@@ -15,7 +15,7 @@ import Img from "gatsby-image"
         
             <StaticQuery query={graphql`  
                             query MyQuery1 {
-                                allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/blog/"}}, sort: {fields: frontmatter___date, order: DESC}) {
+                                allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/blog/"}}, sort: {fields: frontmatter___date, order: ASC}) {
                                     nodes {
                                         frontmatter {
                                             slug
