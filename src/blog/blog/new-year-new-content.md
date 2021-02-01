@@ -1,7 +1,7 @@
 ---
 title: New year, new content
 author: Yana Batra
-featuredImage: level-up-neon-sign-tect-vector_118419-93.jpg
+featuredImage: codeclevelup.png
 date: February 1, 2021
 draft: false
 slug: ""
