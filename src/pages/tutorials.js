@@ -49,7 +49,7 @@ const NewTutorialPage = () => {
                             stars += '⭐';
                         }
                         return <tr>
-                                <td className={`blog-preview ${node.frontmatter.tags}`}>
+                                <td className={`blog-preview ${node.frontmatter.language}`}>
                                 <div>
                                 
                                     <Link className="link-to-blog" to={slug} key={slug}>{node.frontmatter.title}</Link><br/>
