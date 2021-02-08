@@ -25,14 +25,19 @@ const SearchFilter = (props) => {
     });
     return (
         <div>
+
             <input value={filter} onChange={handleChange}></input>
-            {filteredData.map(item => (
-                <div key={item.email}>
+            
+            <div className="flex-container" style={{width: "100%", flexWrap: "wrap", "paddingTop": "10px"}}>
+                {filteredData.map(item => (
                     <div>
-                        <button onClick={handleClick}>{item.id}</button>
+                        <div>
+                            <button onClick={handleClick} style={{marginRight: "5px"}}>{item.id}</button>
+                        </div>
                     </div>
-                </div>
-            ))}
+                ))}
+            </div>
+            
         </div>
     )
 }

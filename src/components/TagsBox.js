@@ -51,16 +51,43 @@ export default class TagsBox extends React.Component {
         button.remove()
     }
     unselectTag (button) {
+        
         let name = button.innerHTML;
+        let newTags = this.state.tagsSelected;
+        let index;
+        try {
+            index = this.state.tagsSelected.indexOf(name)
+            newTags.splice(index, 1);
+            console.log("update")
+            let currentLanguages = this.state.availableLanguages;
+            currentLanguages.push({id: name, displayName: name})
+            this.setState({
+                tagsSeleted: newTags,
+                availableLanguages: currentLanguages
+            })
+        }
+        catch {
+
+        }
+        
+    }
+    handleClick = event => {
+        this.unselectTag(event.target)
     }
 
     render () {
         return (
-            <div>
+            <div style={{"marginRight": "10px", borderRight: '1px solid rgba(0, 0, 0, 0.1)', "padding": "10px", width: "250px"}}>
+                <h4>TAGS</h4>
+                
                 <SearchFilter data={this.state.availableLanguages} selectTag={this.selectTag}></SearchFilter>
-                {this.state.tagsSelected.map(tag => (
-                    <button style={{'marginRight': "20px", 'backgroundColor': 'rgba(0, 255, 0, 0.2)'}}>{tag}</button>
-                ))}
+                
+                <div className="flex-container" style={{flexWrap: "wrap"}}>
+                    {this.state.tagsSelected.map(tag => (
+                        <button style={{marginRight: "5px", 'backgroundColor': 'rgba(0, 255, 0, 0.2)'}} onClick={this.handleClick}>{tag}</button>
+                    ))}
+                </div>
+                
                 {/*<LanguageCheckbox langs={this.state.languages} setlangs={this.setLanguages} language="python"/>
                 <LanguageCheckbox langs={this.state.languages} setlangs={this.setLanguages} language="javascript"/>
                 <LanguageCheckbox langs={this.state.languages} setlangs={this.setLanguages} language="java"/>

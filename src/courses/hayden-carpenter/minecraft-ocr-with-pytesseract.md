@@ -5,6 +5,8 @@ language: python
 difficulty: 3
 description: First step to automating Minecraft
 date: July 28, 2020
+slug: ""
+tags: []
 ---
 #What is PyTesseract and OCR?
 

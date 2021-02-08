@@ -6,6 +6,7 @@ difficulty: 1
 description: New to Python? Start here.
 date: July 15, 2020
 slug: /tutorials/python/intro
+tags: []
 tutorials:
   - url: https://trinket.io/embed/python3/88aeefac23
     title: Hello World!

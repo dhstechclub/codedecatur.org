@@ -8,6 +8,7 @@ date: January 27, 2021
 draft: false
 hide: false
 slug: ""
+tags: []
 ---
 # Balancing Ball with a PID controller
 

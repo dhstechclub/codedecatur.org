@@ -8,6 +8,7 @@ description: In this tutorial I will show you how to install, run, and write a
 date: January 25, 2021
 draft: false
 slug: ""
+tags: []
 ---
 # Prerequisites
 

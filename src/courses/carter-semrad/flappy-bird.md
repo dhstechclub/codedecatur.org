@@ -5,7 +5,8 @@ language: javascript
 difficulty: 3
 description: Ever wanted to make flappy bird, but didn't want to do it well?
 date: July 20, 2020
-slug: /tutorials/javascript/flappy-bird
+tags: []
+slug: /tutorials/carter-semrad/flappy-bird
 ---
 
 ![game](../../images/flappy-bird/flappy.png)

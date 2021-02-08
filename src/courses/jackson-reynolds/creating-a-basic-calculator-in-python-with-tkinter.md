@@ -6,6 +6,7 @@ difficulty: 2
 description: Learn the ways of this graphical user interface
 date: December 30, 2020
 slug: ""
+tags: []
 ---
 In this tutorial, we'll be using a GUI with Python to create a calculator. That GUI will be Tkinter, the most commonly used GUI with Python. (I, for one, rely heavily on StackOverflow for answers. More users = good.) The calculator will be a simple 4-function calculator because I don't want to create five hundred buttons. And yes, it would be simpler to just type expressions into the Python shell to perform calculations, but simplicity is not our goal; rather, it is to learn a few of the many, many things that can be accomplished with this simple yet effective graphical user interface.
 

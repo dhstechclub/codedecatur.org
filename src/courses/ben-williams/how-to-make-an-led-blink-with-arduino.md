@@ -7,6 +7,7 @@ description: Want to make an LED blink with an Arduino? I'll show you how, and
   give you some more things you can do with just an LED.
 date: January 26, 2021
 slug: ""
+tags: []
 ---
 # Prerequisites
 

@@ -1,4 +1,4 @@
-import React, { useState, } from "react"
+import React from "react"
 import TagsBox from "../components/TagsBox"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -11,8 +11,9 @@ const NewTutorialPage = () => {
     <SEO title="Tutorials" />
     <div className="nav-spacing margin">
         <h1 className="pixel-font">Tutorials</h1>
+        <div className="flex-container">
         <TagsBox></TagsBox>
-        <table>
+        <table className="">
             <StaticQuery query={graphql`  
                             query CoursesQuery {
                                 allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/courses/"}}, sort: {fields: frontmatter___difficulty, order: ASC}) {
@@ -25,6 +26,7 @@ const NewTutorialPage = () => {
                                             language
                                             difficulty
                                             description
+                                            
                                         }
                                     }
                                 }
@@ -35,7 +37,7 @@ const NewTutorialPage = () => {
                     {data.allMarkdownRemark.nodes.map((node) => {
                         let slug;
                         if(node.frontmatter.slug === undefined || node.frontmatter.slug === ""){
-                            slug = `/tutorials/${node.frontmatter.language}/${node.frontmatter.title}`;
+                            slug = `/tutorials/${node.frontmatter.author}/${node.frontmatter.title}`;
                             slug = slug.replace(/\s/g, '-').toLowerCase();
                             slug = encodeURI(slug);
                         }
@@ -47,7 +49,7 @@ const NewTutorialPage = () => {
                             stars += '⭐';
                         }
                         return <tr>
-                                <td className={`blog-preview ${node.frontmatter.language}`}>
+                                <td className={`blog-preview ${node.frontmatter.tags}`}>
                                 <div>
                                 
                                     <Link className="link-to-blog" to={slug} key={slug}>{node.frontmatter.title}</Link><br/>
@@ -64,6 +66,8 @@ const NewTutorialPage = () => {
             }}  
             />
         </table>
+        </div>
+        
     </div>
     </Layout>
  }
