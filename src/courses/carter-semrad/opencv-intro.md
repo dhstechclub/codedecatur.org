@@ -6,7 +6,6 @@ difficulty: 2
 description: Images are pretty cool, but even cooler when they're processed
 date: July 23, 2020
 slug: /tutorials/carter-semrad/opencv-intro
-tags: []
 ---
 
 ![Me with Canny Edge Detection](../../images/opencv-intro/Canny.png)

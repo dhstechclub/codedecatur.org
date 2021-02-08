@@ -7,7 +7,6 @@ description: Did you know that the Mandalorian doesn't use greenscreen for their
   backgrounds?
 date: July 19, 2020
 slug: /tutorials/carter-semrad/opencv-greenscreen
-tags: []
 ---
 ![the greenscreen](../../images/opencv-greenscreen/example.png)
 

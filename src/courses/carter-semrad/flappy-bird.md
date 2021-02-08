@@ -5,7 +5,6 @@ language: javascript
 difficulty: 3
 description: Ever wanted to make flappy bird, but didn't want to do it well?
 date: July 20, 2020
-tags: []
 slug: /tutorials/carter-semrad/flappy-bird
 ---
 

@@ -5,7 +5,6 @@ language: javascript
 difficulty: 4
 description: Basically Skynet.
 date: July 20, 2020
-tags: []
 slug: /tutorials/carter-semrad/ann-intro
 ---
 ![Picture of Neuron](../../images/ann-intro/nnPicture.png)
