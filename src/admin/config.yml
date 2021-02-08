@@ -35,10 +35,10 @@ collections:
     public_folder: "{{title}}"
     slug: "tutorials/{{author}}/{{title}}"
     fields:
+      - { label: "Tags", name: "tags", widget: "list", required: false, default: ["other"]}
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Author", name: "author", widget: "string" }
       - { label: "Programming Language", name: "language", widget: "select", options: ["python", "javascript", "c", "cplusplus", "csharp", "java"] }
-      - { label: "Tags", name: "tags", widget: "list" }
       - { label: "Difficulty", name: "difficulty", widget: "number" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime", dateFormat: "YYYY-MM-DD", format: "LL" }
