@@ -19,15 +19,15 @@ function MobileNav() {
   const [open, setOpen] = React.useState(false);
   return (
     <nav className="mobile-nav">
-      <div id="left-align-nav">
+      <div className="left-align-nav">
       <div className="flex-container">
         <div className="hamburger-icon" onClick={() => {setOpen(!open)}}>
             <div/>
             <div/>
             <div/>
         </div>
-        <div className="nav-element" id="nav-logo">
-        <Link to="/"><img src={Logo} id="main-image" alt="Code Decatur"></img></Link>
+        <div className="nav-element nav-logo">
+        <Link to="/"><img src={Logo} className="main-image" alt="Code Decatur"></img></Link>
         </div>
       </div>
         
@@ -61,9 +61,9 @@ function MobileNav() {
 function Nav() {
   return (
     <nav className="desktop-nav">
-      <div id="left-align-nav">
-        <div className="nav-element" id="nav-logo">
-          <Link to="/"><img src={Logo} id="main-image" alt="Code Decatur"></img></Link>
+      <div className="left-align-nav">
+        <div className="nav-element nav-logo">
+          <Link to="/"><img src={Logo} className="main-image" alt="Code Decatur"></img></Link>
         </div>
         <div className="nav-element">
           <Link to="/tutorials/">Tutorials</Link>
@@ -110,9 +110,9 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <footer>
           <div id="footer-frame">
-          <h1>
+          <p>
           Code Decatur © {new Date().getFullYear()} | <a target="_blank" rel="noreferrer" href="https://github.com/xHayden/codecatur-website">Github</a>
-          </h1>
+          </p>
           </div>
         </footer>
       </div>

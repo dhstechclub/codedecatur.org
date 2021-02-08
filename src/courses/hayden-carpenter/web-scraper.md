@@ -5,7 +5,7 @@ language: python
 difficulty: 2
 description: Scraping the web, one step at a time.
 date: July 17, 2020
-slug: /tutorials/python/web-scraper
+slug: ""
 ---
 ## What are you trying to accomplish?
 

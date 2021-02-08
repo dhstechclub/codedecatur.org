@@ -102,12 +102,12 @@ a:hover, a:visited, a {
     text-decoration: none;
 }
 
-#left-align-nav {
+.left-align-nav {
   padding-left: 2vw;
   text-align: left;
 }
 
-#main-image { /*Nav image*/
+.main-image { /*Nav image*/
     margin: 0;
     height: 27.5px;
 }
@@ -624,7 +624,7 @@ th.tutorial-list-table-element {
     display: block;
   }
 
-  #nav-logo {
+  .nav-logo {
     position: absolute;
    right: 0;
   }

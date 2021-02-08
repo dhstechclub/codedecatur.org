@@ -29,7 +29,9 @@ export default function Template({ data, }) {
                       </tr>
                   </tbody>
                 </table>  
-                <div className="featured-image"><Img fluid={featuredImgFluid} /></div>    
+                <div className="flex-container center">
+                  <div className="featured-image"><Img fluid={featuredImgFluid} /></div>    
+                </div>
                 <div
                 className="course-content"
                 dangerouslySetInnerHTML={{ __html: html }}
@@ -42,8 +44,8 @@ export default function Template({ data, }) {
   )
 }
 export const pageQuery = graphql`
-  query($slug: String!) {
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+  query($title: String!) {
+    markdownRemark(frontmatter: { title: { eq: $title } }) {
       html
       frontmatter {
         date

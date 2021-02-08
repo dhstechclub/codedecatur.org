@@ -26,7 +26,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             node {
               frontmatter {
                 slug
-                language
+                author
                 title
               }
             }
@@ -65,7 +65,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             node {
               frontmatter {
                 slug
-                language
+                author
                 title
               }
             }
@@ -83,7 +83,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     courseResult.data.allMarkdownRemark.edges.forEach(({ node }) => {
       let slugString;
       if(node.frontmatter.slug == undefined || node.frontmatter.slug == ""){
-        slugString = `/tutorials/${node.frontmatter.language}/${node.frontmatter.title}`;
+        slugString = `/tutorials/${node.frontmatter.author}/${node.frontmatter.title}`;
         slugString = slugString.replace(/\s/g, '-').toLowerCase();
         slugString = encodeURI(slugString);
       }
