@@ -1,10 +1,10 @@
 ---
-title: New year, new content
+title: New Year, New Content
 author: Yana Batra
 featuredImage: codeclevelup.png
 date: February 1, 2021
 draft: false
-slug: ""
+slug: /blog/new-year-new-content
 ---
 Code Decatur is excited to announce that we're leveling up our goals for the year! We want to take a more active role in our coding community by creating weekly tutorials, releasing updates on projects we've developed, and giving you guys more cool stuff to look at. 
 
