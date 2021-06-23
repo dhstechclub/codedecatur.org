@@ -12,7 +12,7 @@ slug: ""
 This is a simple tutorial to create the classic game of hangman in Python. If you do not already have Python installed, follow [this tutorial](https://www.youtube.com/watch?v=pfPCV7DXc5w). 
 
 1. Create a new file and name it Hangman. 
-2. First, we need a list of secret words. My words are going to be my favorite foods Make a list by using \[ ] brackets, like so:
+2. First, we need a list of secret words. My words are going to be my favorite foods Make a list by using [ ] brackets, like so:
 
 ```python
 
