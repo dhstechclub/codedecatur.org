@@ -16,7 +16,7 @@ This is a simple tutorial to create the classic game of hangman in Python. If yo
 
 ```python
 
-words = \["Tofu", "Cheese", "Onion", "Bread", "Honey", "Oil", "Butter"]
+words = ["Tofu", "Cheese", "Onion", "Bread", "Honey", "Oil", "Butter"]
 
 ```
 
@@ -34,7 +34,7 @@ word = random.choice(words)
 
 ```python
 
-guesses = \[ ]
+guesses = [ ]
 
 turns = 6
 
@@ -52,13 +52,13 @@ word = word.lower()
 
 ```python
 
-words = \["Tofu", "Cheese", "Onion", "Bread", "Honey", "Oil", "Butter"]
+words = ["Tofu", "Cheese", "Onion", "Bread", "Honey", "Oil", "Butter"]
 
 import random
 
 word = random.choice(words)
 
-guesses = \[]
+guesses = []
 
 turns = 6
 
@@ -112,13 +112,13 @@ while turns > 0:
 
 ```python
 
-words = \["Tofu", "Cheese", "Onion", "Bread", "Honey", "Oil", "Butter"]
+words = ["Tofu", "Cheese", "Onion", "Bread", "Honey", "Oil", "Butter"]
 
 import random
 
 word = random.choice(words)
 
-guesses = \[]
+guesses = []
 
 turns = 6
 
@@ -182,13 +182,13 @@ while turns > 0:
 
 ```python
 
-words = \["Tofu", "Cheese", "Onion", "Bread", "Honey", "Oil", "Butter"]
+words = ["Tofu", "Cheese", "Onion", "Bread", "Honey", "Oil", "Butter"]
 
 import random
 
 word = random.choice(words)
 
-guesses = \[]
+guesses = []
 
 turns = 6
 
@@ -282,13 +282,13 @@ while turns > 0:
 
 ```python
 
-words = \["Tofu", "Cheese", "Onion", "Bread", "Honey", "Oil", "Butter"]
+words = ["Tofu", "Cheese", "Onion", "Bread", "Honey", "Oil", "Butter"]
 
 import random
 
 word = random.choice(words)
 
-guesses = \[]
+guesses = []
 
 turns = 6
 
